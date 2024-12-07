@@ -2,36 +2,24 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
-import Footer from "@components/Footer";
+import { measurementId } from "@constants/googleConstants";
 
-import googleAnalyticsMeasurementId from "@lib/firebase/googleAnalyticsMeasurementId";
-
-// -----------------------------------------------------------------------------
 import "./globals.css";
 
 // -----------------------------------------------------------------------------
 // Text metadata, defined according to the NextJS metadata interface.
 export const metadata: Metadata = {
-  title: "The Buckeye App",
+  title: "Buckeye GPT",
   description:
-    "A free, open-source student organization management SaaS built for The Ohio State University community (not affiliated with Ohio State officials).",
+    "ChatGPT clone (with latest OpenAI models) built free for students at the Ohio State University.",
   generator: "Next.js",
-  applicationName: "The Buckeye App",
+  applicationName: "Buckeye GPT",
   // Sends the full URL as the referrer for same-origin requests, only the
   // origin for cross-origin requests to the same or higher security level,
   // and no referrer for cross-origin requests to less secure origins.
   // This provides a good balance of privacy and functionality.
   referrer: "strict-origin-when-cross-origin",
-  keywords: [
-    "student organization",
-    "student club",
-    "SaaS",
-    "management",
-    "attendance",
-    "events",
-    "Ohio State",
-    "Buckeye"
-  ],
+  keywords: ["GPT", "OpenAI", "Ohio State University", "OSU", "Buckeyes"],
   authors: [{ name: "Keming He", url: "https://linkedin.com/in/keminghe" }],
   creator: "Keming He",
   publisher: "Keming He",
@@ -42,14 +30,14 @@ export const metadata: Metadata = {
   // },
   robots: {
     index: true,
-    follow: true,
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    "max-image-preview": "large"
+    follow: false
+    // "max-snippet": -1,
+    // "max-video-preview": -1,
+    // "max-image-preview": "large"
   },
   manifest: "/site.webmanifest",
   appleWebApp: {
-    title: "BuckApp"
+    title: "BuckeyeGPT"
     // statusBarStyle: "black-translucent",
     // startupImage: [{ url: "...", media: "(...)"}],
   }
@@ -83,10 +71,8 @@ export default function RootLayout({
           href="/icons/apple-touch-icon.png"
         />
       </head>
-      <body className="flex flex-col min-h-screen justify-center items-center">
-        {children}
-      </body>
-      <GoogleAnalytics gaId={googleAnalyticsMeasurementId} />
+      <body className="min-h-screen">{children}</body>
+      <GoogleAnalytics gaId={measurementId} />
     </html>
   );
 }

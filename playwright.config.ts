@@ -1,17 +1,8 @@
-import path from "node:path";
-
 import { defineConfig, devices } from "@playwright/test";
-import { config } from "dotenv";
-
-const devEnvFilePath: string = path.resolve(
-  process.cwd(),
-  ".env.development.local"
-);
-config({ path: devEnvFilePath });
 
 // See https://playwright.dev/docs/test-configuration.
 export default defineConfig({
-  testDir: "./playwright",
+  testDir: "./.playwright",
   testMatch: "**/*.spec.ts",
 
   // Run tests in files in parallel.
@@ -32,13 +23,13 @@ export default defineConfig({
     [
       "html",
       {
-        outputFolder: "./playwright/test-report"
+        outputFolder: "./.playwright/test-report"
       }
     ]
   ],
 
   // Folder for test artifacts such as screenshots and trace files.
-  outputDir: "./playwright/test-results",
+  outputDir: "./.playwright/test-results",
 
   // Shared settings for all the projects below.
   // See https://playwright.dev/docs/api/class-testoptions.
@@ -91,7 +82,7 @@ export default defineConfig({
 
   // Run your local dev server before starting the tests.
   webServer: {
-    command: "pnpm run dev",
+    command: "pnpm dev",
     url: "http://127.0.0.1:3000",
     reuseExistingServer: !process.env.CI
   }
