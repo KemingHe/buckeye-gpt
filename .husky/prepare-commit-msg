@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Step 1. Allow terminal input for commitizen prompts.
+exec < /dev/tty
+
+# Step 2. Run commitizen to format commit messages, 
+# fallback to skipping with success if it fails
+pnpm cz --hook || true

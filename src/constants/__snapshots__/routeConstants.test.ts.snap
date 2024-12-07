@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`routeConstants > matches the snapshot 1`] = `
+{
+  "AUTH_SIGNIN_ROUTE": "/auth/signin",
+  "AUTH_SIGNOUT_ROUTE": "/auth/signout",
+  "AUTH_VERIFY_ROUTE": "/auth/verify",
+  "EVENTS_ROUTE": "/events",
+  "HOME_ROUTE": "/",
+  "SUPPORT_ROUTE": "/support",
+  "USER_DASHBOARD_ROUTE": "/dashboard",
+}
+`;

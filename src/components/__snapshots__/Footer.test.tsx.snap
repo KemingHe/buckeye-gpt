@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="footer footer-center bg-base-300 text-base-content p-5"
+  >
+    <aside>
+      <p
+        class="flex space-x-2"
+      >
+        <span>
+          Keming He
+        </span>
+        <span
+          aria-hidden="true"
+        >
+          •
+        </span>
+        <span>
+          © 2024
+        </span>
+      </p>
+    </aside>
+  </footer>
+</DocumentFragment>
+`;

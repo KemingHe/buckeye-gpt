@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`actionCodeSettings > exports the correct firebase auth local storage key 1`] = `"firebaseAuthEmail"`;

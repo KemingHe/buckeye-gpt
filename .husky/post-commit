@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Disable Husky during release-it to avoid infinite loop.
+export HUSKY=0
+pnpm release-it --ci
+unset HUSKY

@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LoadingCard component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <output
+    aria-live="polite"
+    class="card shadow-lg"
+  >
+    <div
+      class="card-body flex flex-col justify-center items-center"
+    >
+      <div
+        class="card-title h-12"
+      >
+        <span
+          aria-hidden="true"
+          class="loading loading-spinner loading-lg"
+        />
+      </div>
+      <p
+        aria-label="Loading message"
+        class="text-center"
+      >
+        This is a loading message.
+      </p>
+    </div>
+  </output>
+</DocumentFragment>
+`;
