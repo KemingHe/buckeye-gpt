@@ -2,7 +2,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
-import { measurementId } from "@constants/googleConstants";
+import { MEASUREMENT_ID } from "@constants/googleConstants";
 
 import "./globals.css";
 
@@ -72,7 +72,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen">{children}</body>
-      <GoogleAnalytics gaId={measurementId} />
+      <GoogleAnalytics gaId={MEASUREMENT_ID} />
     </html>
   );
 }
