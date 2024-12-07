@@ -3,8 +3,13 @@
   "type": "module",
   "name": "buckeye-gpt",
   "description": "ChatGPT clone (with latest OpenAI models) built free for students at the Ohio State University.",
-  "version": "0.1.0",
-  "keywords": ["nextjs", "firebase", "typescript", "daisyui"],
+  "version": "0.1.1",
+  "keywords": [
+    "nextjs",
+    "firebase",
+    "typescript",
+    "daisyui"
+  ],
   "homepage": "https://buckeye.chat",
   "license": "GPL-3.0-only",
   "author": {
