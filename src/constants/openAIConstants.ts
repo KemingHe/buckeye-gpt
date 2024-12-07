@@ -1,2 +1,2 @@
-export const openAIAPIKey: string = process.env.OPENAI_API_KEY as string;
-export const openAIModel: string = process.env.OPENAI_MODEL as string;
+export const OPENAI_API_KEY: string = process.env.OPENAI_API_KEY as string;
+export const OPENAI_MODEL_ID: string = process.env.OPENAI_MODEL_ID as string;

@@ -9,6 +9,6 @@ export default {
   ],
   plugins: [daisyui],
   daisyui: {
-    themes: ["light", "dark"]
+    themes: ["light", "dark", "valentine"]
   }
 } satisfies Config;
