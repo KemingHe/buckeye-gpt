@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`API endpoint constants > matches the snapshot 1`] = `
+{
+  "LANGCHAIN_OPENAI_API_ENDPOINT": "/api/langchain/openai",
+}
+`;

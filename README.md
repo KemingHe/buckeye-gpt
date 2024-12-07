@@ -1,3 +1,3 @@
-# The Buckeye App
+# Buckeye GPT
 
-A free, open-source student organization management SaaS built for The Ohio State University community (not affiliated with Ohio State officials).
+ChatGPT clone (with latest OpenAI models) built free for students at the Ohio State University.

@@ -1,6 +1,6 @@
 {
-  "name": "The Buckeye App",
-  "short_name": "BuckApp",
+  "name": "Buckeye GPT",
+  "short_name": "BuckeyeGPT",
   "icons": [
     {
       "src": "/icons/web-app-manifest-192x192.png",

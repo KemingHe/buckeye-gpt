@@ -1,11 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Firebase local admin service account key json
-firebase-admin-service-account-key.json
-
-# Fireabse emulator saved state
-/.emulator
-/.emulators
+# Playwright
+/test-results/
+/blob-report/
+/playwright-report/
+/.playwright/.cache/
+/.playwright/test-report/
+/.playwright/test-results/
 
 # dependencies
 /node_modules
@@ -166,10 +167,3 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Playwright
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/test-report/
-/playwright/test-results/
