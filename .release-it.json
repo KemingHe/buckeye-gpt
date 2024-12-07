@@ -1,0 +1,39 @@
+{
+  "verbose": 2,
+  "hooks": {
+    "before:init": [
+      "echo -e '\\033[0;36m\nStarting release-it process...\\033[0m'"
+    ],
+    "after:bump": [
+      "echo -e '\\033[0;33m\nVersion bumped to v${version}. Regenerating CHANGELOG.md...\\033[0m'"
+    ],
+    "after:release": [
+      "echo -e '\\033[0;32m\nRelease complete: ${name} v${version} is ready to be pushed.\\033[0m'"
+    ]
+  },
+  "git": {
+    "tag": true,
+    "tagArgs": ["-s"],
+    "tagName": "v${version}",
+    "requireCleanWorkingDir": true,
+    "commit": true,
+    "commitMessage": "chore(changelog): v${version} via release-it (auto, ci env)",
+    "commitArgs": ["--no-verify"],
+    "push": false
+  },
+  "npm": {
+    "publish": false
+  },
+  "github": {
+    "release": false
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog",
+      "preset": {
+        "name": "conventionalcommits"
+      }
+    }
+  }
+}
