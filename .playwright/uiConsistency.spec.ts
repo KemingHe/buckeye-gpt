@@ -1,16 +1,24 @@
-import { type BrowserContext, type Page, expect, test } from "@playwright/test";
+import {
+  // type BrowserContext,
+  type Page,
+  expect,
+  test
+} from "@playwright/test";
 
-// Allow 30 seconds for resource-intensive expects.
+// Allow 30 seconds for resource-intensive expects and waits.
 const customTimeout = { timeout: 30000 };
 
-// Allow max 1% pixel difference for screenshots.
-const customDiffPixelRatio = { maxDiffPixelRatio: 0.01 };
+// Allow max 0% pixel difference for screenshots.
+const customDiffPixelRatio = { maxDiffPixelRatio: 0.0 };
 
 test.beforeEach(
   async ({
-    page,
-    context
-  }: { page: Page; context: BrowserContext }): Promise<void> => {
+    page
+    // context
+  }: {
+    page: Page;
+    // context: BrowserContext
+  }): Promise<void> => {
     /* Set the request headers to disable caching. */
     // await page.route("**/*", (route) => {
     //   route.continue({
@@ -28,15 +36,14 @@ test.beforeEach(
     // await context.clearPermissions();
     // await context.storageState({ path: undefined });
 
-    // Go to the main page.
+    // Go to the main page and wait for full hydration.
     await page.goto("/", customTimeout);
+    await page.waitForLoadState("networkidle", customTimeout);
   }
 );
 
 test.describe("Buckeye GPT ui", () => {
   test("is consistent on main page", async ({ page }: { page: Page }) => {
-    await page.waitForSelector("button:has-text('send')", customTimeout);
-
     // const expandTextareaButton = await page.locator(
     //   "[aria-label='Expand textarea']"
     // );

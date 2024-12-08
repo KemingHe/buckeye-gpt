@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  devIndicators: {
+    // Perma disable dev server indicator to prevent issue with Playwright.
+    appIsrStatus: false
+  }
 };
 
 export default nextConfig;

@@ -73,7 +73,7 @@ export default function RootLayout({
           href="/icons/apple-touch-icon.png"
         />
       </head>
-      <body className="min-h-screen">
+      <body className="h-dvh w-dvw">
         {/* <StackProvider app={stackServerApp}>
           <StackTheme>{children}</StackTheme>
         </StackProvider> */}
