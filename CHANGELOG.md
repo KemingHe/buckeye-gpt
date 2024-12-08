@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1](https://github.com/KemingHe/buckeye-gpt/compare/v0.3.0...v0.3.1) (2024-12-08)
+
+### Bug Fixes
+
+* **chatinputsection.tsx:** fixed safari svg display bug by explicitly declaring size val ([e27b8ae](https://github.com/KemingHe/buckeye-gpt/commit/e27b8ae028746053541b27ad6f05a90701ef093e)), closes [#1](https://github.com/KemingHe/buckeye-gpt/issues/1)
+
 ## [0.3.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.2.0...v0.3.0) (2024-12-08)
 
 ### Features
