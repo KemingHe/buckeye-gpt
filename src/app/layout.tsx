@@ -1,8 +1,10 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
+// import { StackProvider, StackTheme } from "@stackframe/stack";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
 import { MEASUREMENT_ID } from "@constants/googleConstants";
+// import stackServerApp from "@lib/stackAuth/stackServerApp";
 
 import "./globals.css";
 
@@ -71,7 +73,12 @@ export default function RootLayout({
           href="/icons/apple-touch-icon.png"
         />
       </head>
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        {/* <StackProvider app={stackServerApp}>
+          <StackTheme>{children}</StackTheme>
+        </StackProvider> */}
+        {children}
+      </body>
       <GoogleAnalytics gaId={MEASUREMENT_ID} />
     </html>
   );
