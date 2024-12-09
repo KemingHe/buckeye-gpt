@@ -18,4 +18,8 @@
   .code-text {
     @apply text-sm font-mono text-neutral-300;
   }
+
+  .textarea {
+    @apply text-base;
+  }
 }
