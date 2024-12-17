@@ -1,6 +1,8 @@
-import "@testing-library/jest-dom";
+import '@testing-library/jest-dom';
+import { config } from 'dotenv-safe';
 
-import { config } from "dotenv-safe";
-config();
+// When testing locally, use dotenv-safe to load environment variables
+// from .env file to ensure no missing variables.
+if (!process.env.CI) config();
 
 // For responsive components, use Playwright's screenshot.
