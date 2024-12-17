@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.3.1...v0.4.0) (2024-12-17)
+
+### Features
+
+* **/lib/stackauth/:** in process of adding custom stack auth. Implemented sign-in UI ([02a8cc4](https://github.com/KemingHe/buckeye-gpt/commit/02a8cc45ef89a153f522139eaafb1aed149027c5))
+
 ## [0.3.1](https://github.com/KemingHe/buckeye-gpt/compare/v0.3.0...v0.3.1) (2024-12-08)
 
 ### Bug Fixes
