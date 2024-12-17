@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Route constants > matches the snapshot 1`] = `
+{
+  "AUTH_SIGN_IN_ROUTE": "/auth/sign-in",
+  "AUTH_VERIFY_EMAIL_ROUTE": "/auth/verify-email",
+  "HOME_ROUTE": "/",
+}
+`;
