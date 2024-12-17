@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     // "max-video-preview": -1,
     // "max-image-preview": "large"
   },
-  manifest: '/site.webmanifest',
   appleWebApp: {
     title: 'BuckeyeGPT',
     // statusBarStyle: "black-translucent",
@@ -56,22 +55,6 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   return (
     <html lang="en">
-      <head>
-        {/* Icon metadata, explicitly defined here due to NextJS's limitations. */}
-        <link
-          rel="icon"
-          type="image/png"
-          href="/icons/favicon-96x96.png"
-          sizes="96x96"
-        />
-        <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
-        <link rel="shortcut icon" href="/icons/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/icons/apple-touch-icon.png"
-        />
-      </head>
       <body className="h-dvh w-dvw">
         <StackProvider app={stackServerApp}>{children}</StackProvider>
       </body>
