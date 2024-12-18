@@ -31,7 +31,6 @@
     "prepare": "husky || true",
     "lint": "biome ci .",
     "lint:fix": "biome check --write .",
-    "lint:test:unit": "pnpm lint && pnpm test:unit",
     "build": "next build",
     "test:unit": "vitest",
     "test:unit:update-snapshots": "vitest --update",
@@ -39,8 +38,8 @@
     "test:e2e:update-snapshots": "playwright test --update-snapshots",
     "test": "pnpm test:unit && pnpm test:e2e",
     "verify": "pnpm lint && pnpm build && pnpm test && pnpm scan:secrets",
-    "predev": "pnpm lint:fix",
     "dev": "next dev --turbopack",
+    "dev:share": "next dev --turbopack -H 0.0.0.0",
     "check:favicon": "realfavicon check -s cli 3000",
     "scan:secrets": "ggshield secret scan repo .",
     "start": "next start"

@@ -18,4 +18,9 @@
   .code-text {
     @apply text-sm font-mono text-neutral-300;
   }
+
+  /* Enforce >=16px font size for (DaisyUI) textarea to prevent mobile zoom. */
+  .textarea {
+    @apply text-base;
+  }
 }
