@@ -38,7 +38,7 @@
     "test:e2e:update-snapshot": "playwright test --update-snapshots",
     "test": "pnpm test:unit && pnpm test:e2e",
     "predev": "pnpm lint",
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -H 0.0.0.0",
     "check:favicon": "realfavicon check 3000",
     "scan:secrets": "ggshield secret scan repo .",
     "start": "next start"
