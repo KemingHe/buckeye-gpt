@@ -39,7 +39,6 @@
     "test": "pnpm test:unit && pnpm test:e2e",
     "verify": "pnpm lint && pnpm build && pnpm test && pnpm scan:secrets",
     "dev": "next dev --turbopack",
-    "dev:share": "next dev --turbopack -H 0.0.0.0",
     "check:favicon": "realfavicon check -s cli 3000",
     "scan:secrets": "ggshield secret scan repo .",
     "start": "next start"
