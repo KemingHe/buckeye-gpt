@@ -79,7 +79,7 @@ export function ChatInputSection({ chatId }: { chatId: string }): JSX.Element {
         <div className="relative w-full sm:w-auto sm:flex-grow">
           <textarea
             ref={taRef}
-            className={`w-full resize-none overflow-y-auto textarea textarea-bordered border-neutral transition-all duration-300 ${taExpanded ? 'h-96' : 'h-24'} leading-normal`}
+            className={`textarea textarea-bordered border-neutral w-full resize-none overflow-y-auto transition-all duration-300 ${taExpanded ? 'h-96' : 'h-24'} leading-normal`}
             onChange={handleInputChange}
             disabled={isLoading}
             placeholder={
