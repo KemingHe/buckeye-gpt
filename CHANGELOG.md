@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.5.0...v0.6.0) (2024-12-18)
+
+### Features
+
+* **components/chat:** modularized chat kbd handlers/hooks, corrected behavior ([62a24ca](https://github.com/KemingHe/buckeye-gpt/commit/62a24cae2fe9616c6e711d504a2159f56ccf8dde)), closes [#4](https://github.com/KemingHe/buckeye-gpt/issues/4)
+
 ## [0.5.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.4.1...v0.5.0) (2024-12-18)
 
 ### Features
