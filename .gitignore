@@ -37,7 +37,6 @@
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # Logs
 logs

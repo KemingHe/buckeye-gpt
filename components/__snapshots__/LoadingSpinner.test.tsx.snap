@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LoadingSpinner component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <output
+    aria-live="polite"
+    class="card bg-base-200 shadow-lg text-center"
+  >
+    <div
+      class="card-body items-center gap-3 text-lg"
+    >
+      <span
+        aria-hidden="true"
+        class="loading loading-spinner loading-lg"
+      />
+      <p
+        class="text-center"
+      >
+        Loading...
+      </p>
+    </div>
+  </output>
+</DocumentFragment>
+`;
