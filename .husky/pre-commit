@@ -1,12 +1,3 @@
 #!/bin/bash
 
-pnpm install
-pnpm update
-
-pnpm lint
-pnpm build
-
-pnpm test
-pnpm scan:secrets
-
-git add -A
+pnpm verify
