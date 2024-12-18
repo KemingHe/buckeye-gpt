@@ -2,20 +2,28 @@ import {
   ChevronDownIcon,
   ChevronUpDownIcon,
 } from '@heroicons/react/24/outline';
-import { PlayIcon, StopIcon } from '@heroicons/react/24/solid';
 import { useChat } from 'ai/react';
-import { useEffect, useRef, useState } from 'react';
+import { type KeyboardEvent, useEffect, useRef, useState } from 'react';
 
+import {
+  SendChatMessageButton,
+  SendChatMessageKBD,
+} from '@/components/chat/sendMessageComps';
+import {
+  StopChatRequestButton,
+  StopChatRequestKBD,
+} from '@/components/chat/stopRequestComps';
+import { textareaKBDHandler } from '@/components/chat/textareaKBDHandler';
+import { useStopRequestKBD } from '@/components/chat/useStopRequestKBD';
 import { LANGCHAIN_OPENAI_API_ENDPOINT } from '@/constants/apiEndpointConstants';
-import { ctrlDeleteStopRequestHandler } from '@/utils/ctrlDeleteStopRequestHandler';
-import ctrlEnterFormSubmitHandler from '@/utils/ctrlEnterFormSubmitHandler';
 
 export function ChatInputSection({ chatId }: { chatId: string }): JSX.Element {
-  const { input, isLoading, stop, handleInputChange, handleSubmit } = useChat({
-    api: LANGCHAIN_OPENAI_API_ENDPOINT,
-    id: chatId,
-    onError: (error) => console.error(error),
-  });
+  const { input, setInput, handleInputChange, handleSubmit, isLoading, stop } =
+    useChat({
+      api: LANGCHAIN_OPENAI_API_ENDPOINT,
+      id: chatId,
+      onError: (error) => console.error(error),
+    });
 
   // ---------------------------------------------------------------------------
   // Auto re-focus on textarea when loading is done.
@@ -32,35 +40,14 @@ export function ChatInputSection({ chatId }: { chatId: string }): JSX.Element {
   const toggleTAExpanded = () => setTAExpanded(!taExpanded);
 
   // ---------------------------------------------------------------------------
-  // KBDs:
-  // (Meta) Ctrl+Enter to submit form,
-  // (Meta) Ctrl+Delete (BS) to stop request.
-  useEffect(() => {
-    document.addEventListener('keydown', (event: KeyboardEvent) =>
-      ctrlEnterFormSubmitHandler(event),
-    );
-    document.addEventListener('keydown', (event: KeyboardEvent) =>
-      ctrlDeleteStopRequestHandler({
-        event,
-        requestInProcess: isLoading,
-        stopRequestHandler: stop,
-      }),
-    );
+  // Textarea keyboard shortcuts:
+  //   - Enter to submit form.
+  //   - Shift+Enter to add new line.
+  // (See textarea onKeyPress event handler.)
 
-    // Cleanup event listeners on component unmount.
-    return () => {
-      document.removeEventListener('keydown', (event: KeyboardEvent) =>
-        ctrlEnterFormSubmitHandler(event),
-      );
-      document.removeEventListener('keydown', (event: KeyboardEvent) =>
-        ctrlDeleteStopRequestHandler({
-          event,
-          requestInProcess: isLoading,
-          stopRequestHandler: stop,
-        }),
-      );
-    };
-  }, [isLoading]);
+  // Document keyboard shortcuts:
+  //   - Backspace or Delete to stop chat request.
+  useStopRequestKBD({ isRequesting: isLoading, stopRequestHandler: stop });
 
   // ---------------------------------------------------------------------------
   return (
@@ -81,6 +68,14 @@ export function ChatInputSection({ chatId }: { chatId: string }): JSX.Element {
             ref={taRef}
             className={`textarea textarea-bordered border-neutral w-full resize-none overflow-y-auto transition-all duration-300 ${taExpanded ? 'h-96' : 'h-24'} leading-normal`}
             onChange={handleInputChange}
+            onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) =>
+              textareaKBDHandler({
+                event,
+                currentInput: input,
+                setInput,
+                handleSubmit,
+              })
+            }
             disabled={isLoading}
             placeholder={
               isLoading ? 'Loading...' : 'I have a question about...'
@@ -119,71 +114,5 @@ export function ChatInputSection({ chatId }: { chatId: string }): JSX.Element {
         </div>
       </form>
     </section>
-  );
-}
-
-// -----------------------------------------------------------------------------
-// biome-ignore format: added alignment for clarity.
-export interface StopChatRequestButtonProps {
-  isLoading: boolean;
-  stop     : () => void;
-}
-
-export function StopChatRequestButton({
-  isLoading,
-  stop,
-}: StopChatRequestButtonProps): JSX.Element {
-  return (
-    <button
-      type="button"
-      className="btn-error w-full btn btn-sm sm:btn-md"
-      onClick={stop}
-      disabled={!isLoading}
-      aria-label="Stop chat request"
-      aria-disabled={!isLoading}
-    >
-      Stop
-      <StopIcon className="size-4 -ms-1" />
-    </button>
-  );
-}
-
-export function StopChatRequestKBD(): JSX.Element {
-  return (
-    <div
-      className="hidden sm:flex font-semibold"
-      aria-label="Pressing Delete or Backspace key also stops chat request"
-    >
-      <kbd className="kbd kbd-xs">Delete</kbd>
-    </div>
-  );
-}
-
-// -----------------------------------------------------------------------------
-export function SendChatMessageButton({
-  isLoading,
-}: { isLoading: boolean }): JSX.Element {
-  return (
-    <button
-      type="submit"
-      className="btn-primary w-full btn btn-sm sm:btn-md"
-      disabled={isLoading}
-      aria-label="Send chat message"
-      aria-disabled={isLoading}
-    >
-      Send
-      <PlayIcon className="size-4 -ms-1" />
-    </button>
-  );
-}
-
-export function SendChatMessageKBD(): JSX.Element {
-  return (
-    <div
-      className="hidden sm:flex font-semibold"
-      aria-label="Pressing Enter key also sends chat message"
-    >
-      <kbd className="kbd kbd-xs">Enter</kbd>
-    </div>
   );
 }
