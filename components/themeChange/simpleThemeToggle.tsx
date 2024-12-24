@@ -1,12 +1,18 @@
-export default function SimpleThemeToggle({
-  themeName,
-}: { themeName: string }): JSX.Element {
+import type { JSX } from 'react';
+
+export interface SimpleThemeToggleProps {
+  themeId: string;
+}
+
+export function SimpleThemeToggle({
+  themeId,
+}: SimpleThemeToggleProps): JSX.Element {
   return (
     <label className="flex cursor-pointer gap-2">
       <span className="font-semibold">Toogle Theme</span>
       <input
         type="checkbox"
-        value={themeName}
+        value={themeId}
         className="toggle theme-controller"
       />
     </label>

@@ -1,11 +1,6 @@
 'use server';
 
-import { NotFoundPrompt } from '@/components/NotFoundPrompt';
+import { NotFoundPrompt } from '@/components/error/NotFoundPrompt';
+import withCenteredWrapper from '@/hocs/withCenteredWrapper';
 
-export default async function NotFound(): Promise<JSX.Element> {
-  return (
-    <div className="h-full w-full flex flex-col justify-center items-center">
-      <NotFoundPrompt />
-    </div>
-  );
-}
+export default withCenteredWrapper(NotFoundPrompt);

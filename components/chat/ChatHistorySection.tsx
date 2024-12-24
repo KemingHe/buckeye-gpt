@@ -1,5 +1,5 @@
 import { useChat } from 'ai/react';
-import { useEffect, useRef } from 'react';
+import { type JSX, useEffect, useRef } from 'react';
 
 import { MemoizedChatBubble } from '@/components/chat/ChatBubble';
 import { LANGCHAIN_OPENAI_API_ENDPOINT } from '@/constants/apiEndpointConstants';

@@ -12,6 +12,7 @@ import {
 } from '@stackframe/stack';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { JSX } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import { ChatHistorySection } from '@/components/chat/ChatHistorySection';
@@ -62,8 +63,8 @@ function Sidebar(): JSX.Element {
     //   <li>Sidebar item 1</li>
     //   <li>Sidebar item 2</li>
     // </ul>
-    <div className="w-80 p-4 h-full bg-base-200 flex flex-col justify-center items-center">
-      <p className="text-center">Local history via indexeddb coming soon...</p>
+    <div className="w-80 p-4 h-full bg-base-100 flex flex-col justify-center items-center border-r border-neutral">
+      <p className="text-center">History coming soon...</p>
     </div>
   );
 }
@@ -71,7 +72,7 @@ function Sidebar(): JSX.Element {
 function Navbar(): JSX.Element {
   const clientUser: CurrentUser | CurrentInternalUser | null = useUser();
   return (
-    <nav className="navbar bg-base-300 w-full flex-shrink-0 py-3 px-4">
+    <nav className="navbar w-full flex-shrink-0 py-3 px-4">
       {/* Hamburger menu icon. */}
       <div className="flex-none lg:hidden">
         <label htmlFor="drawer-toggle" className="btn btn-square btn-ghost">
@@ -105,18 +106,16 @@ function Navbar(): JSX.Element {
 
 function SignOutButton(): JSX.Element {
   return (
-    <Link href="/auth/sign-out" className="btn btn-outline w-28">
-      Sign Out
-      <ArrowRightStartOnRectangleIcon className="size-5 -mx-1" />
+    <Link href="/auth/sign-out" className="btn btn-square btn-ghost">
+      <ArrowRightStartOnRectangleIcon className="size-7" />
     </Link>
   );
 }
 
 function SignInButton(): JSX.Element {
   return (
-    <Link href="/auth/sign-in" className="btn btn-accent w-28">
-      Sign In
-      <ArrowRightEndOnRectangleIcon className="size-5 -mx-1" />
+    <Link href="/auth/sign-in" className="btn btn-square btn-ghost text-accent">
+      <ArrowRightEndOnRectangleIcon className="size-7" />
     </Link>
   );
 }
