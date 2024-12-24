@@ -3,6 +3,7 @@
 exports[`Route constants > matches the snapshot 1`] = `
 {
   "AUTH_SIGN_IN_ROUTE": "/auth/sign-in",
+  "AUTH_SIGN_OUT_ROUTE": "/auth/sign-out",
   "AUTH_VERIFY_EMAIL_ROUTE": "/auth/verify-email",
   "HOME_ROUTE": "/",
 }

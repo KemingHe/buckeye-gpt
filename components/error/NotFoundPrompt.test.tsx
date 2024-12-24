@@ -1,6 +1,6 @@
 import { type RenderResult, render, screen } from '@testing-library/react';
 
-import { NotFoundPrompt } from '@/components/NotFoundPrompt';
+import { NotFoundPrompt } from '@/components/error/NotFoundPrompt';
 
 describe('NotFoundPrompt component', () => {
   it('renders a 404 error message and links to homepage and sign-in', () => {

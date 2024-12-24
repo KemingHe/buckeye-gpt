@@ -1,7 +1,9 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { StackProvider } from '@stackframe/stack';
 import type { Metadata, Viewport } from 'next';
-import type { ReactNode } from 'react';
+import { Inter } from 'next/font/google';
+import type { JSX, ReactNode } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 import { MEASUREMENT_ID } from '@/constants/googleConstants';
 import stackServerApp from '@/lib/stackAuth/stackServerApp';
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
   // and no referrer for cross-origin requests to less secure origins.
   // This provides a good balance of privacy and functionality.
   referrer: 'strict-origin-when-cross-origin',
-  keywords: ['GPT', 'OpenAI', 'Ohio State University', 'OSU', 'Buckeyes'],
+  keywords: ['Langchain', 'OpenAI', 'Gemini', 'Ohio State', 'Buckeyes'],
   authors: [{ name: 'Keming He', url: 'https://linkedin.com/in/keminghe' }],
   creator: 'Keming He',
   publisher: 'Keming He',
@@ -45,9 +47,18 @@ export const metadata: Metadata = {
 
 // -----------------------------------------------------------------------------
 // Theme color metadata, defined separately through the NextJS viewport interface.
-export const viewport: Viewport = {
-  themeColor: '#ffffff',
-};
+// export const viewport: Viewport = {
+//   themeColor: '#ffffff',
+// };
+
+// TODO: dynamically use device theme color.
+
+// -----------------------------------------------------------------------------
+// Explicitly define the Inter font subset to use for the entire application
+// for UI consistency and performance.
+const inter = Inter({
+  subsets: ['latin'],
+});
 
 // -----------------------------------------------------------------------------
 export default function RootLayout({
@@ -55,8 +66,11 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   return (
     <html lang="en">
-      <body className="h-dvh w-dvw">
-        <StackProvider app={stackServerApp}>{children}</StackProvider>
+      <body className={`h-dvh ${inter.className}`}>
+        <StackProvider app={stackServerApp}>
+          {children}
+          <ToastContainer position="top-center" theme="colored" />
+        </StackProvider>
       </body>
       <GoogleAnalytics gaId={MEASUREMENT_ID} />
     </html>

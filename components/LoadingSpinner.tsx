@@ -1,4 +1,12 @@
-export default function LoadingSpinner(): JSX.Element {
+import type { JSX } from 'react';
+
+export interface LoadingSpinnerProps {
+  message?: string;
+}
+
+export function LoadingSpinner({
+  message = 'Loading...',
+}: LoadingSpinnerProps): JSX.Element {
   return (
     <output
       className="card bg-base-200 shadow-lg text-center"
@@ -9,7 +17,7 @@ export default function LoadingSpinner(): JSX.Element {
           className="loading loading-spinner loading-lg"
           aria-hidden="true"
         />
-        <p className="text-center">Loading...</p>
+        <p className="text-center">{message}</p>
       </div>
     </output>
   );
