@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import type { JSX } from 'react';
 
-export default function PrivacyPolicyAndTermsAndConditions(): JSX.Element {
+export default function LegalNotice(): JSX.Element {
   return (
-    <p className="text-justify leading-tight text-xs">
+    <p className="text-center leading-snug text-sm">
       By signing in, you acknowledge that you have read and agree to our&nbsp;
       <Link className="link" href={PRIVACY_POLICY_LINK}>
         Privacy Policy

@@ -1,4 +1,5 @@
 import { PaperAirplaneIcon } from '@heroicons/react/24/solid';
+import type { JSX } from 'react';
 
 export function SendChatMessageButton({
   isLoading,

@@ -81,7 +81,9 @@ export default defineConfig({
   ],
 
   // For consistency, use a fresh production build and the prod server for e2e tests.
+  // Allow 2 minutes for the server to start due to build time.
   webServer: {
+    timeout: 120000,
     command: 'pnpm build && pnpm start',
     url: 'http://127.0.0.1:3000',
     reuseExistingServer: !process.env.CI,

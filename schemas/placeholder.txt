@@ -1,1 +1,0 @@
-Non-empty placeholder to ensure git commit file structure.

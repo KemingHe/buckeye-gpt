@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+  /* ---- Code Block Styling ---- */
   .code-block-container {
     @apply flex justify-start items-center mx-3 my-1 px-4 py-3 rounded-lg code-bg code-text;
   }
@@ -19,7 +20,12 @@
     @apply text-sm font-mono text-neutral-300;
   }
 
-  /* Enforce >=16px font size for (DaisyUI) textarea to prevent mobile zoom. */
+  /* ---- Input/Textarea Styling ---- */
+  /* Enforce >=16px font size for (DaisyUI) input and textarea to prevent mobile zoom. */
+  .input {
+    @apply text-base;
+  }
+
   .textarea {
     @apply text-base;
   }

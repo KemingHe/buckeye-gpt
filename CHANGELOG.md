@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.6.1...v0.7.0) (2024-12-24)
+
+### Features
+
+* **stack-auth:** completed all auth user stories via Stack-Auth SaaS ([1ebd106](https://github.com/KemingHe/buckeye-gpt/commit/1ebd1066456217e1e5a61dfd476511bf5aeae22a))
+
 ## [0.6.1](https://github.com/KemingHe/buckeye-gpt/compare/v0.6.0...v0.6.1) (2024-12-18)
 
 ## [0.6.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.5.0...v0.6.0) (2024-12-18)
