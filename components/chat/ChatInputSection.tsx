@@ -3,7 +3,13 @@ import {
   ChevronUpDownIcon,
 } from '@heroicons/react/24/outline';
 import { useChat } from 'ai/react';
-import { type KeyboardEvent, useEffect, useRef, useState } from 'react';
+import {
+  type JSX,
+  type KeyboardEvent,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import {
   SendChatMessageButton,

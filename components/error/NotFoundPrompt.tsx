@@ -1,11 +1,12 @@
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
+import type { JSX } from 'react';
 
 import { AUTH_SIGN_IN_ROUTE, HOME_ROUTE } from '@/constants/routeConstants';
 
 export function NotFoundPrompt(): JSX.Element {
   return (
-    <div className="flex flex-col justify-center items-center gap-4">
+    <div className="flex flex-col justify-center items-center gap-4 m-4">
       <h1 className="flex flex-col text-center font-extrabold">
         <span className="text-xl text-error">404</span>
         <span className="text-5xl">Page Not Found</span>

@@ -1,6 +1,6 @@
 import { type RenderResult, render, screen } from '@testing-library/react';
 
-import LoadingSpinner from '@/components/LoadingSpinner';
+import { LoadingSpinner } from '@/components/LoadingSpinner';
 
 describe('LoadingSpinner component', () => {
   it('renders an accessible and visible loading spinner', () => {

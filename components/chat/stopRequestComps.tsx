@@ -1,4 +1,5 @@
 import { StopIcon } from '@heroicons/react/24/solid';
+import type { JSX } from 'react';
 
 // biome-ignore format: added alignment for clarity.
 export interface StopChatRequestButtonProps {

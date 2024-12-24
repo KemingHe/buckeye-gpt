@@ -1,0 +1,77 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NotFoundPage component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <main
+    class="h-full w-full flex flex-col justify-center items-center"
+  >
+    <div
+      class="flex flex-col justify-center items-center gap-4 m-4"
+    >
+      <h1
+        class="flex flex-col text-center font-extrabold"
+      >
+        <span
+          class="text-xl text-error"
+        >
+          404
+        </span>
+        <span
+          class="text-5xl"
+        >
+          Page Not Found
+        </span>
+      </h1>
+      <p
+        class="text-center"
+      >
+        Are you looking for one of these pages?
+      </p>
+      <div
+        class="flex jusify-center items-center gap-4"
+      >
+        <a
+          class="btn btn-outline btn-primary font-extrabold"
+          href="/"
+        >
+          Buckeye GPT
+          <svg
+            aria-hidden="true"
+            class="size-5 -ms-2"
+            data-slot="icon"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </a>
+        <a
+          class="btn btn-outline btn-secondary font-extrabold"
+          href="/auth/sign-in"
+        >
+          Sign In
+          <svg
+            aria-hidden="true"
+            class="size-5 -ms-2"
+            data-slot="icon"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+</DocumentFragment>
+`;
