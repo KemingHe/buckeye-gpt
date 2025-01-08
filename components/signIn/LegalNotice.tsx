@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import type { JSX } from 'react';
 
+import {
+  PRIVACY_POLICY_LINK,
+  TERMS_AND_CONDITIONS_LINK,
+} from '@/constants/externalLinkConstants';
+
 export default function LegalNotice(): JSX.Element {
   return (
     <p className="text-center leading-snug text-sm">
@@ -9,13 +14,10 @@ export default function LegalNotice(): JSX.Element {
         Privacy Policy
       </Link>
       &nbsp;and&nbsp;
-      <Link className="link" href={TERMS_CONDITIONS_LINK}>
+      <Link className="link" href={TERMS_AND_CONDITIONS_LINK}>
         Terms & Conditions
       </Link>
       .
     </p>
   );
 }
-
-const PRIVACY_POLICY_LINK = '/dev';
-const TERMS_CONDITIONS_LINK = '/dev';
