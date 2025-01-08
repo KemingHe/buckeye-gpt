@@ -48,12 +48,10 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
@@ -70,20 +68,20 @@ export default defineConfig({
     },
 
     /* Test against branded browsers. */
-    {
-      name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    },
-    {
-      name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    },
+    // {
+    //   name: 'Microsoft Edge',
+    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    // },
+    // {
+    //   name: 'Google Chrome',
+    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    // },
   ],
 
   // For consistency, use a fresh production build and the prod server for e2e tests.
-  // Allow 2 minutes for the server to start due to build time.
+  // Allow 5 minutes for the server to start due to long build time.
   webServer: {
-    timeout: 120000,
+    timeout: 300000,
     command: 'pnpm build && pnpm start',
     url: 'http://127.0.0.1:3000',
     reuseExistingServer: !process.env.CI,
