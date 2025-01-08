@@ -49,6 +49,10 @@ export function SignInForm({
             className={`join-item input input-sm input-bordered ${errors.nameDotNumber ? 'input-error' : ''} focus:border-none w-36`}
             disabled={isDisabled}
             required
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck="false"
+            autoComplete="username"
             aria-required="true"
             aria-disabled={isDisabled}
             aria-invalid={errors.nameDotNumber ? 'true' : 'false'}
