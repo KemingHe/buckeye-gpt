@@ -5,7 +5,7 @@ import {
   SignInFormFieldsSchema,
 } from '@/components/signIn/SignInFormFieldsSchema';
 import { AUTH_VERIFY_EMAIL_ROUTE } from '@/constants/routeConstants';
-import stackServerApp from '@/lib/stackAuth/stackServerApp';
+import stackServerApp from '@/lib/stackAuth/server/stackServerApp';
 import getCallbackUrl from '@/utils/getCallbackUrl';
 
 export async function signInServerAction(
