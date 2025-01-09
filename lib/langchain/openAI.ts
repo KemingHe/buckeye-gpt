@@ -1,11 +1,15 @@
+import 'server-only';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import type { Runnable } from '@langchain/core/runnables';
 import { ChatOpenAI } from '@langchain/openai';
 
-import { OPENAI_API_KEY, OPENAI_MODEL_ID } from '@/constants/openAIConstants';
+import {
+  OPENAI_API_KEY,
+  OPENAI_LITE_MODEL_ID,
+} from '@/lib/langchain/openAIConstants';
 
 export const openAIModel: ChatOpenAI = new ChatOpenAI({
-  model: OPENAI_MODEL_ID,
+  model: OPENAI_LITE_MODEL_ID,
   apiKey: OPENAI_API_KEY,
 });
 
@@ -16,7 +20,7 @@ export const openAIModel: ChatOpenAI = new ChatOpenAI({
 
 export const prompt: ChatPromptTemplate = ChatPromptTemplate.fromTemplate(`
     You are a helpful AI assistent named Buckeye GPT, created by Keming He.
-    You are based on OpenAI's ${OPENAI_MODEL_ID} model.
+    You are based on OpenAI's ${OPENAI_LITE_MODEL_ID} model.
     Your target audience is students and faculty at The Ohio State University.
 
     You answer questions in a clear and concise manner,
