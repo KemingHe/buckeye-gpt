@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.5](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.4...v0.7.5) (2025-01-09)
+
+### Bug Fixes
+
+* **.nvmrc:** added .nvmrc to specify node version for GitHub Action scripts ([94b5e41](https://github.com/KemingHe/buckeye-gpt/commit/94b5e411b38c82e91c0f8942d93c8849bc7b9c45))
+
+## [0.7.4](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.3...v0.7.4) (2025-01-09)
+
+## [0.7.3](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.2...v0.7.3) (2025-01-08)
+
+## [0.7.2](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.1...v0.7.2) (2025-01-08)
+
 ## [0.7.1](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.0...v0.7.1) (2025-01-08)
 
 ## [0.7.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.6.1...v0.7.0) (2024-12-24)

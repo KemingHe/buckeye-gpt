@@ -6,7 +6,7 @@ import type { JSX, ReactNode } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import { MEASUREMENT_ID } from '@/constants/googleConstants';
-import stackServerApp from '@/lib/stackAuth/stackServerApp';
+import stackServerApp from '@/lib/stackAuth/server/stackServerApp';
 import '@/app/globals.css';
 
 // -----------------------------------------------------------------------------
