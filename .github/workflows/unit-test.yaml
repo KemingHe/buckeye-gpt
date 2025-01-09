@@ -1,0 +1,55 @@
+name: unit-test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * 0'
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      CI: true
+      NODE_ENV: test
+      PLAYWRIGHT_DEPS_PATH: /tmp/.ms-playwright
+      # Google Analytics credentials.
+      NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID }}
+      # Stack Auth credentials.
+      NEXT_PUBLIC_STACK_PROJECT_ID               : ${{ secrets.NEXT_PUBLIC_STACK_PROJECT_ID }}
+      NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY   : ${{ secrets.NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY }}
+      STACK_SECRET_SERVER_KEY                    : ${{ secrets.STACK_SECRET_SERVER_KEY }}
+      # OpenAI credentials.
+      OPENAI_API_KEY                             : ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_LITE_MODEL_ID                       : ${{ secrets.OPENAI_LITE_MODEL_ID }}
+      OPENAI_REGULAR_MODEL_ID                    : ${{ secrets.OPENAI_REGULAR_MODEL_ID }}
+      OPENAI_PREMIUM_MODEL_ID                    : ${{ secrets.OPENAI_PREMIUM_MODEL_ID }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm before node
+        # Pinned to commit hash of release v4.0.0 on 05/07/24.
+        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
+        # Omit with to use package.json packageManager field pnpm version.
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: CI lint
+        run: pnpm lint
+
+      - name: Test build
+        run: pnpm build
+
+      - name: Unit test
+        run: pnpm test:unit
