@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { stopRequestKBDHandler } from '@/components/chat/stopRequestKBDHandler';
+import { stopRequestKBDHandler } from '@/components/chat/input/stopRequestKBDHandler';
 
 export interface UseStopRequestKBDProps {
   isRequesting: boolean;

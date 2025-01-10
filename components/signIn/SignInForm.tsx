@@ -46,7 +46,7 @@ export function SignInForm({
             id={nameDotNumberInputId}
             type="text"
             placeholder="buckeye.1"
-            className={`join-item input input-sm input-bordered ${errors.nameDotNumber ? 'input-error' : ''} focus:border-none w-36`}
+            className={`join-item input input-sm input-bordered ${errors.nameDotNumber ? 'input-error' : ''} w-36`}
             disabled={isDisabled}
             required
             autoCapitalize="none"
