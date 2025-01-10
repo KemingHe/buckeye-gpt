@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.7](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.6...v0.7.7) (2025-01-10)
+
+### Bug Fixes
+
+* **layout.tsx:** modularized socialify constants and use /png endpoint to fix og render logo issue ([6cd087c](https://github.com/KemingHe/buckeye-gpt/commit/6cd087c92991786421de893643ba48103e3c9581))
+
 ## [0.7.6](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.5...v0.7.6) (2025-01-10)
 
 ## [0.7.5](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.4...v0.7.5) (2025-01-09)
