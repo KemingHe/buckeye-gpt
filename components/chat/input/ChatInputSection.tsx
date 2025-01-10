@@ -14,13 +14,13 @@ import {
 import {
   SendChatMessageButton,
   SendChatMessageKBD,
-} from '@/components/chat/sendMessageComps';
+} from '@/components/chat/input/sendMessageComps';
 import {
   StopChatRequestButton,
   StopChatRequestKBD,
-} from '@/components/chat/stopRequestComps';
-import { textareaKBDHandler } from '@/components/chat/textareaKBDHandler';
-import { useStopRequestKBD } from '@/components/chat/useStopRequestKBD';
+} from '@/components/chat/input/stopRequestComps';
+import { textareaKBDHandler } from '@/components/chat/input/textareaKBDHandler';
+import { useStopRequestKBD } from '@/components/chat/input/useStopRequestKBD';
 import { LANGCHAIN_OPENAI_API_ENDPOINT } from '@/constants/apiEndpointConstants';
 
 export function ChatInputSection({ chatId }: { chatId: string }): JSX.Element {

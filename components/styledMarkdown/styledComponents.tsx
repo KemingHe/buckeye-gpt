@@ -50,7 +50,7 @@ const styledComponents: Partial<Components> = {
   // Paragraphs (p).
   p: ({ node, children, ...props }) => {
     return (
-      <p className="text-justify py-2" {...props}>
+      <p className="py-2" {...props}>
         {children}
       </p>
     );

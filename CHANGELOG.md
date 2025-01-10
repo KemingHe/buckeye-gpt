@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.7.6](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.5...v0.7.6) (2025-01-10)
+
 ## [0.7.5](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.4...v0.7.5) (2025-01-09)
 
 ### Bug Fixes

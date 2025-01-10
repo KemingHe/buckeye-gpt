@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Style constants > matches the latest snapshot 1`] = `
+{
+  "COLOR_PRIMARY": "#1d242a",
+}
+`;
