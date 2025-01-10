@@ -7,6 +7,12 @@ import { ToastContainer } from 'react-toastify';
 
 import { PRODUCTION_DOMAIN } from '@/constants/domainConstants';
 import { MEASUREMENT_ID } from '@/constants/googleConstants';
+import {
+  SOCIALIFY_PREVIEW_IMAGE_ALT,
+  SOCIALIFY_PREVIEW_IMAGE_HEIGHT,
+  SOCIALIFY_PREVIEW_IMAGE_URL,
+  SOCIALIFY_PREVIEW_IMAGE_WIDTH,
+} from '@/constants/styleConstants';
 import { COLOR_PRIMARY } from '@/constants/styleConstants';
 import stackServerApp from '@/lib/stackAuth/server/stackServerApp';
 import packageDotJson from '@/package.json';
@@ -44,11 +50,10 @@ export const metadata: Metadata = {
     siteName: 'Buckeye GPT',
     images: [
       {
-        // Socailify-generated preview based on the GitHub repository.
-        url: 'https://socialify.git.ci/KemingHe/buckeye-gpt/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FKemingHe%2Fbuckeye-gpt%2Fblob%2Fmain%2Fpublic%2Fimages%2Ftransparent-buckeye-gpt-icon-512x512px.svg%3Fraw%3Dtrue&name=1&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Light',
-        width: 1280,
-        height: 640,
-        alt: 'Buckeye GPT is a open-source multi-modal ChatGPT clone with RAG built free for students at the Ohio State University.',
+        url: SOCIALIFY_PREVIEW_IMAGE_URL,
+        width: SOCIALIFY_PREVIEW_IMAGE_WIDTH,
+        height: SOCIALIFY_PREVIEW_IMAGE_HEIGHT,
+        alt: SOCIALIFY_PREVIEW_IMAGE_ALT,
       },
     ],
     locale: 'en_US',
@@ -63,11 +68,10 @@ export const metadata: Metadata = {
     creator: '@Keming_He',
     images: [
       {
-        // Socailify-generated preview based on the GitHub repository.
-        url: 'https://socialify.git.ci/KemingHe/buckeye-gpt/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FKemingHe%2Fbuckeye-gpt%2Fblob%2Fmain%2Fpublic%2Fimages%2Ftransparent-buckeye-gpt-icon-512x512px.svg%3Fraw%3Dtrue&name=1&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Light',
-        width: 1280,
-        height: 640,
-        alt: 'Buckeye GPT is a open-source multi-modal ChatGPT clone with RAG built free for students at the Ohio State University.',
+        url: SOCIALIFY_PREVIEW_IMAGE_URL,
+        width: SOCIALIFY_PREVIEW_IMAGE_WIDTH,
+        height: SOCIALIFY_PREVIEW_IMAGE_HEIGHT,
+        alt: SOCIALIFY_PREVIEW_IMAGE_ALT,
       },
     ],
   },
