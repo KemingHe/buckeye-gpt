@@ -1,7 +1,7 @@
 import { useChat } from 'ai/react';
 import { type JSX, useEffect, useRef } from 'react';
 
-import { MemoizedChatBubble } from '@/components/chat/ChatBubble';
+import { MemoizedChatBubble } from '@/components/chat/history/ChatBubble';
 import { LANGCHAIN_OPENAI_API_ENDPOINT } from '@/constants/apiEndpointConstants';
 
 export function ChatHistorySection({

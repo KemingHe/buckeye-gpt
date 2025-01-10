@@ -23,6 +23,7 @@ export function SignInWireframe(props: SignInWireframeProps): JSX.Element {
             alt="Buckeye GPT logo"
             width={75}
             height={75}
+            priority={true}
           />
         </figure>
         <div className="card-body items-center py-4 gap-3">
