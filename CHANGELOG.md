@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.8](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.7...v0.7.8) (2025-01-11)
+
+### Bug Fixes
+
+* **.gitignore:** added gitguardian cache to .gitignore ([4e777be](https://github.com/KemingHe/buckeye-gpt/commit/4e777be42f07800d7dcecad9ddbf756b72dd95b7))
+
 ## [0.7.7](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.6...v0.7.7) (2025-01-10)
 
 ### Bug Fixes
