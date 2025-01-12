@@ -1,19 +1,19 @@
 import type { KeyboardEvent } from 'react';
 
 // biome-ignore format: added alignment for clarity.
-export interface TextareaKBDHanderProps {
+export interface TextAreaKBDHanderProps {
   event       : KeyboardEvent<HTMLTextAreaElement>;
   currentInput: string;
   setInput    : (input: string) => void;
   handleSubmit: () => void;
 }
 
-export function textareaKBDHandler({
+export function textAreaKBDHandler({
   event,
   currentInput,
   setInput,
   handleSubmit,
-}: TextareaKBDHanderProps): void {
+}: TextAreaKBDHanderProps): void {
   const { key, shiftKey } = event;
 
   // Short-circuit if Enter key is not pressed.
