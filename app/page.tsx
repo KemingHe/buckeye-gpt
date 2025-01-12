@@ -1,5 +1,5 @@
 'use client';
 
-import HomepageWrapper from '@/components/homepage/HomepageWrapper';
+import ChatPageWrapper from '@/components/chatPage/ChatPageWrapper';
 
-export default HomepageWrapper;
+export default ChatPageWrapper;
