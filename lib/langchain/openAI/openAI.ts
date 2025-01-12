@@ -6,7 +6,7 @@ import { ChatOpenAI } from '@langchain/openai';
 import {
   OPENAI_API_KEY,
   OPENAI_LITE_MODEL_ID,
-} from '@/lib/langchain/openAIConstants';
+} from '@/lib/langchain/openAI/openAIConstants';
 
 export const openAIModel: ChatOpenAI = new ChatOpenAI({
   model: OPENAI_LITE_MODEL_ID,

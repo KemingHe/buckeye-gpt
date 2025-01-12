@@ -1,4 +1,4 @@
-import * as openAIConstants from '@/lib/langchain/openAIConstants';
+import * as openAIConstants from '@/lib/langchain/openAI/openAIConstants';
 import isNonEmptyString from '@/utils/isNonEmptyString';
 
 // IMPORTANT: NEVER snapshot secrets or sensitive information.

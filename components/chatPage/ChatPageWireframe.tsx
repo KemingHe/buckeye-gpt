@@ -1,29 +1,29 @@
 import type { JSX, ReactNode } from 'react';
 
 import {
-  HomepageNavbar,
-  type HomepageNavbarProps,
-} from '@/components/homepage/navbar/HomepageNavbar';
-import { HomepageSideDrawer } from '@/components/homepage/sideDrawer/HomepageSideDrawer';
+  ChatNavbar,
+  type ChatNavbarProps,
+} from '@/components/chatNavbar/ChatNavbar';
+import { ChatSideDrawer } from '@/components/chatSideDrawer/ChatSideDrawer';
 
-export interface HomepageWireframeProps extends HomepageNavbarProps {
+export interface ChatPageWireframeProps extends ChatNavbarProps {
   children: ReactNode;
 }
 
-export function HomepageWireframe({
+export function ChatPageWireframe({
   clientUser,
   children,
-}: HomepageWireframeProps): JSX.Element {
+}: ChatPageWireframeProps): JSX.Element {
   return (
     <main className="drawer lg:drawer-open h-full">
       <input id="drawer-toggle" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-grow flex-col min-h-0">
         {/* Navbar. */}
-        <HomepageNavbar clientUser={clientUser} />
+        <ChatNavbar clientUser={clientUser} />
         {/* Main chat content. */}
         {children}
       </div>
-      <HomepageSideDrawer />
+      <ChatSideDrawer />
     </main>
   );
 }

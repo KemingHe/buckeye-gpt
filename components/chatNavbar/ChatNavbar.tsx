@@ -7,16 +7,14 @@ import type { JSX } from 'react';
 import {
   SignInLinkButton,
   SignOutLinkButton,
-} from '@/components/homepage/navbar/navbarButtons';
+} from '@/components/chatNavbar/navbarButtons';
 import { HOME_ROUTE } from '@/constants/routeConstants';
 
-export interface HomepageNavbarProps {
+export interface ChatNavbarProps {
   clientUser: CurrentUser | CurrentInternalUser | null;
 }
 
-export function HomepageNavbar({
-  clientUser,
-}: HomepageNavbarProps): JSX.Element {
+export function ChatNavbar({ clientUser }: ChatNavbarProps): JSX.Element {
   return (
     <nav className="navbar w-full flex-shrink-0 py-3 px-4">
       {/* Hamburger menu icon. */}
