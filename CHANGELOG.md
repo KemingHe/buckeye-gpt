@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.10...v0.8.0) (2025-01-14)
+
+### Features
+
+* ****/route.ts:** added origin and auth check to regular and premium endpoints ([a7bf43b](https://github.com/KemingHe/buckeye-gpt/commit/a7bf43bf24cdb1c49caec3b38382eaa683e9d0b3)), closes [#52](https://github.com/KemingHe/buckeye-gpt/issues/52)
+
 ## [0.7.10](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.9...v0.7.10) (2025-01-12)
 
 ## [0.7.9](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.8...v0.7.9) (2025-01-12)
