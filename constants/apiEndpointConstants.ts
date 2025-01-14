@@ -1,6 +1,7 @@
 // Langchain endpoints.
-export const LANGCHAIN_OPENAI_API_ENDPOINT: string = '/api/langchain/openai';
-
-// Stack-Auth endpoints.
-export const STACH_AUTH_SIGN_IN_API_ENDPOINT: string =
-  '/api/stack/auth/sign-in';
+export const LANGCHAIN_OPENAI_LITE_API_ENDPOINT: string =
+  '/api/langchain/openai/lite';
+export const LANGCHAIN_OPENAI_REGULAR_API_ENDPOINT: string =
+  '/api/langchain/openai/regular';
+export const LANGCHAIN_OPENAI_PREMIUM_API_ENDPOINT: string =
+  '/api/langchain/openai/premium';
