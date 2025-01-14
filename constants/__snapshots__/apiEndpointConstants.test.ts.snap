@@ -2,7 +2,8 @@
 
 exports[`API endpoint constants > matches the snapshot 1`] = `
 {
-  "LANGCHAIN_OPENAI_API_ENDPOINT": "/api/langchain/openai",
-  "STACH_AUTH_SIGN_IN_API_ENDPOINT": "/api/stack/auth/sign-in",
+  "LANGCHAIN_OPENAI_LITE_API_ENDPOINT": "/api/langchain/openai/lite",
+  "LANGCHAIN_OPENAI_PREMIUM_API_ENDPOINT": "/api/langchain/openai/premium",
+  "LANGCHAIN_OPENAI_REGULAR_API_ENDPOINT": "/api/langchain/openai/regular",
 }
 `;

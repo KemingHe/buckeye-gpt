@@ -10,12 +10,12 @@ import {
 import { ChatInputWireframe } from '@/components/chatInput/ChatInputWireframe';
 import { textAreaKBDHandler } from '@/components/chatInput/textAreaKBDHandler';
 import { useStopRequestKBD } from '@/components/chatInput/useStopRequestKBD';
-import { LANGCHAIN_OPENAI_API_ENDPOINT } from '@/constants/apiEndpointConstants';
+import { LANGCHAIN_OPENAI_LITE_API_ENDPOINT } from '@/constants/apiEndpointConstants';
 
 export function ChatInputWrapper({ chatId }: { chatId: string }): JSX.Element {
   const { input, setInput, handleInputChange, handleSubmit, isLoading, stop } =
     useChat({
-      api: LANGCHAIN_OPENAI_API_ENDPOINT,
+      api: LANGCHAIN_OPENAI_LITE_API_ENDPOINT,
       id: chatId,
       onError: (error) => console.error(error),
     });
