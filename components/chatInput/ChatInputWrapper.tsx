@@ -1,4 +1,3 @@
-import { useChat } from 'ai/react';
 import {
   type JSX,
   type KeyboardEvent,
@@ -10,15 +9,17 @@ import {
 import { ChatInputWireframe } from '@/components/chatInput/ChatInputWireframe';
 import { textAreaKBDHandler } from '@/components/chatInput/textAreaKBDHandler';
 import { useStopRequestKBD } from '@/components/chatInput/useStopRequestKBD';
-import { LANGCHAIN_OPENAI_LITE_API_ENDPOINT } from '@/constants/apiEndpointConstants';
+import { type ChatContextValue, useChatContext } from '@/contexts/ChatContext';
 
-export function ChatInputWrapper({ chatId }: { chatId: string }): JSX.Element {
-  const { input, setInput, handleInputChange, handleSubmit, isLoading, stop } =
-    useChat({
-      api: LANGCHAIN_OPENAI_LITE_API_ENDPOINT,
-      id: chatId,
-      onError: (error) => console.error(error),
-    });
+export default function ChatInputWrapper(): JSX.Element {
+  const {
+    isLoading,
+    inputValue,
+    setInputValue,
+    handleSubmit,
+    handleInputChange,
+    handleStopRequest,
+  }: ChatContextValue = useChatContext();
 
   // ---------------------------------------------------------------------------
   // Auto re-focus on textarea when loading is done.
@@ -42,15 +43,18 @@ export function ChatInputWrapper({ chatId }: { chatId: string }): JSX.Element {
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>): void => {
     textAreaKBDHandler({
       event,
-      currentInput: input,
-      setInput,
+      currentInput: inputValue,
+      setCurrentInput: setInputValue,
       handleSubmit,
     });
   };
 
   // Document keyboard shortcuts:
   //   - Backspace or Delete to stop chat request.
-  useStopRequestKBD({ isRequesting: isLoading, stopRequestHandler: stop });
+  useStopRequestKBD({
+    isRequesting: isLoading,
+    stopRequestHandler: handleStopRequest,
+  });
 
   // ---------------------------------------------------------------------------
   return (
@@ -59,8 +63,8 @@ export function ChatInputWrapper({ chatId }: { chatId: string }): JSX.Element {
       handleSubmit={handleSubmit}
       handleInputChange={handleInputChange}
       handleKeyDown={handleKeyDown}
-      handleStopRequest={stop}
-      textAreaValue={input}
+      handleStopRequest={handleStopRequest}
+      textAreaValue={inputValue}
       textAreaRef={taRef}
       isTextAreaExpanded={taExpanded}
       toggleTextAreaExpanded={toggleTAExpanded}

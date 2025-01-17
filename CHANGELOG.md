@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.8.1...v0.9.0) (2025-01-17)
+
+### Features
+
+* **chatcontext.tsx:** adopted ChatProvider for wrapper comps, retired prop drilling paradigm ([2e27895](https://github.com/KemingHe/buckeye-gpt/commit/2e27895d8278c8e2ac298846f3b2adf3c204165e)), closes [#50](https://github.com/KemingHe/buckeye-gpt/issues/50) [#65](https://github.com/KemingHe/buckeye-gpt/issues/65) [#16](https://github.com/KemingHe/buckeye-gpt/issues/16)
+
 ## [0.8.1](https://github.com/KemingHe/buckeye-gpt/compare/v0.8.0...v0.8.1) (2025-01-16)
 
 ## [0.8.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.7.10...v0.8.0) (2025-01-14)

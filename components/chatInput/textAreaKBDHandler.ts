@@ -1,17 +1,17 @@
-import type { KeyboardEvent } from 'react';
+import type { FormEvent, KeyboardEvent } from 'react';
 
 // biome-ignore format: added alignment for clarity.
 export interface TextAreaKBDHanderProps {
-  event       : KeyboardEvent<HTMLTextAreaElement>;
-  currentInput: string;
-  setInput    : (input: string) => void;
-  handleSubmit: () => void;
+  event          : KeyboardEvent<HTMLTextAreaElement>;
+  currentInput   : string;
+  setCurrentInput: (input: string) => void;
+  handleSubmit   : (event?: FormEvent<HTMLFormElement>) => void;
 }
 
 export function textAreaKBDHandler({
   event,
   currentInput,
-  setInput,
+  setCurrentInput,
   handleSubmit,
 }: TextAreaKBDHanderProps): void {
   const { key, shiftKey } = event;
@@ -30,6 +30,6 @@ export function textAreaKBDHandler({
 
   // Case 2: Shift + Enter key is pressed, add a new line.
   if (key === 'Enter' && shiftKey) {
-    setInput(`${currentInput}\n`);
+    setCurrentInput(`${currentInput}\n`);
   }
 }
