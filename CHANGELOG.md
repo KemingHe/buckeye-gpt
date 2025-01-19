@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.10.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.9.0...v0.10.0) (2025-01-19)
+
+### Features
+
+* **hooks/usechat/:** adopted custom useChat.ts starting with modularized copy of ai sdk's useChat ([cb9c3c2](https://github.com/KemingHe/buckeye-gpt/commit/cb9c3c246498d46e4992a781f4fa53912662c4b6))
+
 ## [0.9.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.8.1...v0.9.0) (2025-01-17)
 
 ### Features
