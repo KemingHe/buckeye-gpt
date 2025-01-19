@@ -18,6 +18,7 @@
   },
   "linter": {
     "enabled": true,
+    "ignore": ["hooks/useChat"],
     "rules": {
       "recommended": true,
       "correctness": {

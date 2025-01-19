@@ -1,9 +1,9 @@
+import type { Message } from '@ai-sdk/ui-utils';
 import {
   type CurrentInternalUser,
   type CurrentUser,
   useUser,
 } from '@stackframe/stack';
-import { type Message, useChat } from 'ai/react';
 import {
   type ChangeEvent,
   type Context,
@@ -19,10 +19,11 @@ import {
   LANGCHAIN_OPENAI_LITE_API_ENDPOINT,
   LANGCHAIN_OPENAI_REGULAR_API_ENDPOINT,
 } from '@/constants/apiEndpointConstants';
+import { useChat } from '@/hooks/useChat/useChat';
 
 // biome-ignore format: added alignment for clarity.
 export interface ChatContextValue {
-  // Chat state.
+  // Chat states.
   //  - Loading state.
   isLoading         : boolean;
 

@@ -1,5 +1,5 @@
+import type { Message } from '@ai-sdk/ui-utils';
 import { AcademicCapIcon, UserIcon } from '@heroicons/react/24/outline';
-import type { Message } from 'ai';
 import { type JSX, memo } from 'react';
 
 import StyledMarkdown from '@/components/styledMarkdown/StyledMarkdown';
