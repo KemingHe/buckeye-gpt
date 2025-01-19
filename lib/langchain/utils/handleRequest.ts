@@ -1,7 +1,8 @@
 import 'server-only';
+import type { Message } from '@ai-sdk/ui-utils';
 import type { Runnable } from '@langchain/core/runnables';
 import type { IterableReadableStream } from '@langchain/core/utils/stream';
-import { LangChainAdapter, type Message } from 'ai';
+import { LangChainAdapter } from 'ai';
 
 import stringifyChatHistory from '@/lib/langchain/utils/stringifyChatHistory';
 
