@@ -1,6 +1,6 @@
 // IMPORTANT: Not a React component, DO NOT put 'use server';
 
-import { openAIPremiumChain } from '@/lib/langchain/openAI/openAIChains';
+import { gptPremiumChain } from '@/lib/langchain/openAI/gptChains';
 import { handleChatRequest } from '@/lib/langchain/utils/handleRequest';
 import isAuthedWithRole from '@/lib/stackAuth/server/isAuthedWithRole';
 import isValidOrigin from '@/utils/isValidOrigin';
@@ -15,7 +15,7 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   try {
-    return await handleChatRequest({ request, aiChain: openAIPremiumChain });
+    return await handleChatRequest({ request, aiChain: gptPremiumChain });
   } catch (error) {
     console.error(error);
     return new Response('Internal server error', { status: 500 });

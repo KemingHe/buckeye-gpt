@@ -13,9 +13,8 @@ jobs:
     permissions:
       contents: read
     env:
-      CI: true
-      NODE_ENV: test
-      PLAYWRIGHT_DEPS_PATH: /tmp/.ms-playwright
+      # process.env.CI is automatically set to true by GitHub Actions.
+      # process.env.NODE_ENV is automatically set to test by vitest.
       # Google Analytics credentials.
       NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID }}
       # Stack Auth credentials.
@@ -23,10 +22,10 @@ jobs:
       NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY   : ${{ secrets.NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY }}
       STACK_SECRET_SERVER_KEY                    : ${{ secrets.STACK_SECRET_SERVER_KEY }}
       # OpenAI credentials.
-      OPENAI_API_KEY                             : ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_LITE_MODEL_ID                       : ${{ secrets.OPENAI_LITE_MODEL_ID }}
-      OPENAI_REGULAR_MODEL_ID                    : ${{ secrets.OPENAI_REGULAR_MODEL_ID }}
-      OPENAI_PREMIUM_MODEL_ID                    : ${{ secrets.OPENAI_PREMIUM_MODEL_ID }}
+      OPENAI_GPT_API_KEY                         : ${{ secrets.OPENAI_GPT_API_KEY }}
+      OPENAI_GPT_LITE_MODEL_ID                   : ${{ secrets.OPENAI_GPT_LITE_MODEL_ID }}
+      OPENAI_GPT_REGULAR_MODEL_ID                : ${{ secrets.OPENAI_GPT_REGULAR_MODEL_ID }}
+      OPENAI_GPT_PREMIUM_MODEL_ID                : ${{ secrets.OPENAI_GPT_PREMIUM_MODEL_ID }}
       # Google Gemini credentials.
       GOOGLE_GEMINI_API_KEY                      : ${{ secrets.GOOGLE_GEMINI_API_KEY }}
       GOOGLE_GEMINI_LITE_MODEL_ID                : ${{ secrets.GOOGLE_GEMINI_LITE_MODEL_ID }}
@@ -40,6 +39,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up pnpm before node
         # Pinned to commit hash of release v4.0.0 on 05/07/24.
@@ -62,4 +63,11 @@ jobs:
         run: pnpm build
 
       - name: Unit test
-        run: pnpm test:unit
+        run: pnpm test:unit:coverage
+
+      - name: Upload coverage reports to Codecov
+        # Pinned to commit hash of release v5.1.2 on 12/18/24.
+        uses: codecov/codecov-action@1e68e06f1dbfde0e4cefc87efeba9e4643565303
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: ${{ github.repository }}

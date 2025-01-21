@@ -18,5 +18,9 @@ export default defineConfig({
 
     // Allow tests to pass even if no test files are found.
     // passWithNoTests: true,
+
+    coverage: {
+      provider: 'v8',
+    },
   },
 });

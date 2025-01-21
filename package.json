@@ -13,7 +13,7 @@
     "openai"
   ],
   "homepage": "https://buckeye.chat",
-  "license": "GPL-3.0-only",
+  "license": "AGPL-3.0-only",
   "author": {
     "name": "Keming He",
     "email": "keminghe.career@gmail.com",
@@ -24,7 +24,7 @@
     "url": "git+https://github.com/KemingHe/buckeye-gpt.git"
   },
   "bugs": {
-    "url": "https://github.com/KemingHe/buckeye-gpt/issues",
+    "url": "https://github.com/KemingHe/buckeye-gpt/issues/new",
     "email": "keminghe.career@gmail.com"
   },
   "scripts": {
@@ -33,11 +33,12 @@
     "lint:fix": "biome check --write .",
     "build": "next build",
     "test:unit": "vitest",
+    "test:unit:coverage": "vitest --coverage.enabled",
     "test:unit:update-snapshots": "vitest --update",
     "test:e2e:install": "playwright install --with-deps chromium webkit firefox",
     "test:e2e": "playwright test",
     "test:e2e:update-snapshots": "playwright test --update-snapshots",
-    "test": "pnpm test:unit && pnpm test:e2e",
+    "test": "pnpm test:unit:coverage && pnpm test:e2e",
     "verify": "pnpm lint && pnpm test && pnpm scan:secrets",
     "dev": "next dev --turbopack",
     "check:favicon": "realfavicon check -s cli 3000",
@@ -51,7 +52,7 @@
     "@hookform/resolvers": "^3.10.0",
     "@keminghe/osu": "^4.0.1",
     "@langchain/anthropic": "^0.3.12",
-    "@langchain/core": "^0.3.32",
+    "@langchain/core": "^0.3.33",
     "@langchain/google-genai": "^0.1.6",
     "@langchain/openai": "^0.3.17",
     "@next/third-parties": "^15.1.5",
@@ -78,13 +79,14 @@
     "@release-it/conventional-changelog": "^9.0.4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^14.6.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/canvas-confetti": "^1.9.0",
     "@types/dotenv-safe": "^8.1.6",
     "@types/node": "^22.10.7",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "^3.0.3",
     "autoprefixer": "^10.4.20",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
@@ -98,7 +100,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^2.1.8"
+    "vitest": "^3.0.3"
   },
   "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }
