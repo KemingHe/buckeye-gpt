@@ -1,6 +1,6 @@
 // IMPORTANT: Not a React component, DO NOT put 'use server';
 
-import { openAILiteChain } from '@/lib/langchain/openAI/openAIChains';
+import { gptLiteChain } from '@/lib/langchain/openAI/gptChains';
 import { handleChatRequest } from '@/lib/langchain/utils/handleRequest';
 import isValidOrigin from '@/utils/isValidOrigin';
 
@@ -14,7 +14,7 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   try {
-    return await handleChatRequest({ request, aiChain: openAILiteChain });
+    return await handleChatRequest({ request, aiChain: gptLiteChain });
   } catch (error) {
     console.error(error);
     return new Response('Internal server error', { status: 500 });

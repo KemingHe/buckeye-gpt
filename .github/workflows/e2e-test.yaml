@@ -13,8 +13,8 @@ jobs:
     permissions:
       contents: read
     env:
-      CI: true
-      NODE_ENV: test
+      # process.env.CI is automatically set to true by GitHub Actions.
+      # process.env.NODE_ENV is automatically set to production by next start.
       PLAYWRIGHT_DEPS_PATH: /tmp/.ms-playwright
       # Google Analytics credentials.
       NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID }}
@@ -23,10 +23,10 @@ jobs:
       NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY   : ${{ secrets.NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY }}
       STACK_SECRET_SERVER_KEY                    : ${{ secrets.STACK_SECRET_SERVER_KEY }}
       # OpenAI credentials.
-      OPENAI_API_KEY                             : ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_LITE_MODEL_ID                       : ${{ secrets.OPENAI_LITE_MODEL_ID }}
-      OPENAI_REGULAR_MODEL_ID                    : ${{ secrets.OPENAI_REGULAR_MODEL_ID }}
-      OPENAI_PREMIUM_MODEL_ID                    : ${{ secrets.OPENAI_PREMIUM_MODEL_ID }}
+      OPENAI_GPT_API_KEY                         : ${{ secrets.OPENAI_GPT_API_KEY }}
+      OPENAI_GPT_LITE_MODEL_ID                   : ${{ secrets.OPENAI_GPT_LITE_MODEL_ID }}
+      OPENAI_GPT_REGULAR_MODEL_ID                : ${{ secrets.OPENAI_GPT_REGULAR_MODEL_ID }}
+      OPENAI_GPT_PREMIUM_MODEL_ID                : ${{ secrets.OPENAI_GPT_PREMIUM_MODEL_ID }}
       # Google Gemini credentials.
       GOOGLE_GEMINI_API_KEY                      : ${{ secrets.GOOGLE_GEMINI_API_KEY }}
       GOOGLE_GEMINI_LITE_MODEL_ID                : ${{ secrets.GOOGLE_GEMINI_LITE_MODEL_ID }}

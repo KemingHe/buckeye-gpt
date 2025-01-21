@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.11.1](https://github.com/KemingHe/buckeye-gpt/compare/v0.11.0...v0.11.1) (2025-01-21)
+
 ## [0.11.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.10.0...v0.11.0) (2025-01-21)
 
 ### Features
