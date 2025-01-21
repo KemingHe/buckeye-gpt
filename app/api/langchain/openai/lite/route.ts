@@ -2,7 +2,7 @@
 
 import { openAILiteChain } from '@/lib/langchain/openAI/openAIChains';
 import { handleChatRequest } from '@/lib/langchain/utils/handleRequest';
-import { isValidOrigin } from '@/utils/isValidOrigin';
+import isValidOrigin from '@/utils/isValidOrigin';
 
 // Disabled caching for endpoint.
 export const dynamic = 'force-dynamic';

@@ -27,6 +27,16 @@ jobs:
       OPENAI_LITE_MODEL_ID                       : ${{ secrets.OPENAI_LITE_MODEL_ID }}
       OPENAI_REGULAR_MODEL_ID                    : ${{ secrets.OPENAI_REGULAR_MODEL_ID }}
       OPENAI_PREMIUM_MODEL_ID                    : ${{ secrets.OPENAI_PREMIUM_MODEL_ID }}
+      # Google Gemini credentials.
+      GOOGLE_GEMINI_API_KEY                      : ${{ secrets.GOOGLE_GEMINI_API_KEY }}
+      GOOGLE_GEMINI_LITE_MODEL_ID                : ${{ secrets.GOOGLE_GEMINI_LITE_MODEL_ID }}
+      GOOGLE_GEMINI_REGULAR_MODEL_ID             : ${{ secrets.GOOGLE_GEMINI_REGULAR_MODEL_ID }}
+      GOOGLE_GEMINI_PREMIUM_MODEL_ID             : ${{ secrets.GOOGLE_GEMINI_PREMIUM_MODEL_ID }}
+      # Anthropic Claude credentials.
+      ANTHROPIC_CLAUDE_API_KEY                   : ${{ secrets.ANTHROPIC_CLAUDE_API_KEY }}
+      ANTHROPIC_CLAUDE_LITE_MODEL_ID             : ${{ secrets.ANTHROPIC_CLAUDE_LITE_MODEL_ID }}
+      ANTHROPIC_CLAUDE_REGULAR_MODEL_ID          : ${{ secrets.ANTHROPIC_CLAUDE_REGULAR_MODEL_ID }}
+      ANTHROPIC_CLAUDE_PREMIUM_MODEL_ID          : ${{ secrets.ANTHROPIC_CLAUDE_PREMIUM_MODEL_ID }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
