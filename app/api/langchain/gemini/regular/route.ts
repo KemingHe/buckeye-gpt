@@ -1,6 +1,6 @@
 // IMPORTANT: Not a React component, DO NOT put 'use server';
 
-import { openAIRegularChain } from '@/lib/langchain/openAI/openAIChains';
+import { geminiRegularChain } from '@/lib/langchain/google/geminiChains';
 import { handleChatRequest } from '@/lib/langchain/utils/handleRequest';
 import isAuthedWithRole from '@/lib/stackAuth/server/isAuthedWithRole';
 import isValidOrigin from '@/utils/isValidOrigin';
@@ -15,7 +15,7 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   try {
-    return await handleChatRequest({ request, aiChain: openAIRegularChain });
+    return await handleChatRequest({ request, aiChain: geminiRegularChain });
   } catch (error) {
     console.error(error);
     return new Response('Internal server error', { status: 500 });

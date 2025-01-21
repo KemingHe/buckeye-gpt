@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.10.0...v0.11.0) (2025-01-21)
+
+### Features
+
+* **lib/langchain:** added google gemini and anthropic claude lite, reg, and premium endpoints ([ce3f253](https://github.com/KemingHe/buckeye-gpt/commit/ce3f253bba9fc625dcf91879516f57314c6ca60c)), closes [#76](https://github.com/KemingHe/buckeye-gpt/issues/76) [#75](https://github.com/KemingHe/buckeye-gpt/issues/75)
+
 ## [0.10.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.9.0...v0.10.0) (2025-01-19)
 
 ### Features

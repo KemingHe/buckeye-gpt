@@ -3,7 +3,7 @@
 import { openAIPremiumChain } from '@/lib/langchain/openAI/openAIChains';
 import { handleChatRequest } from '@/lib/langchain/utils/handleRequest';
 import isAuthedWithRole from '@/lib/stackAuth/server/isAuthedWithRole';
-import { isValidOrigin } from '@/utils/isValidOrigin';
+import isValidOrigin from '@/utils/isValidOrigin';
 
 // Disabled caching for endpoint.
 export const dynamic = 'force-dynamic';
