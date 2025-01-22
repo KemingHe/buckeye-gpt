@@ -12,23 +12,37 @@ import { HOME_ROUTE } from '@/constants/routeConstants';
 
 export interface ChatNavbarProps {
   clientUser: CurrentUser | CurrentInternalUser | null;
+  isSideDrawerOpen: boolean;
+  openSideDrawer: () => void;
 }
 
-export function ChatNavbar({ clientUser }: ChatNavbarProps): JSX.Element {
+export function ChatNavbar({
+  clientUser,
+  isSideDrawerOpen,
+  openSideDrawer,
+}: ChatNavbarProps): JSX.Element {
   return (
-    <nav className="navbar w-full flex-shrink-0 py-3 px-4">
+    <nav className="navbar w-full flex-shrink-0 p-2 flex items-center">
       {/* Hamburger menu icon. */}
       <div className="flex-none lg:hidden">
-        <label htmlFor="drawer-toggle" className="btn btn-square btn-ghost">
-          <Bars3Icon className="size-6" />
-        </label>
+        <button
+          className="btn btn-square btn-ghost"
+          type="button"
+          onClick={openSideDrawer}
+          aria-controls="side-bar"
+          aria-expanded={isSideDrawerOpen}
+          aria-label="Open side bar"
+        >
+          <Bars3Icon className="size-7" />
+        </button>
       </div>
       {/* Navbar title. */}
-      <div className="mx-2 flex-1 px-2">
-        <Link
+      <div className="px-1 flex-1">
+        {/* <Link
           href={HOME_ROUTE}
           className="flex flex-shrink-0 jusitify-center items-center gap-3"
           aria-label="Go to Buckeye GPT homepage"
+          aria-current="false"
         >
           <Image
             src="/images/transparent-buckeye-gpt-icon-512x512px.png"
@@ -40,7 +54,7 @@ export function ChatNavbar({ clientUser }: ChatNavbarProps): JSX.Element {
           <span className="text-2xl font-extrabold hidden sm:block">
             Buckeye GPT
           </span>
-        </Link>
+        </Link> */}
       </div>
       {/* Sign in/out link button. */}
       <div className="flex-none">
