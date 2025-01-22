@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.2](https://github.com/KemingHe/buckeye-gpt/compare/v0.11.1...v0.11.2) (2025-01-22)
+
+### Bug Fixes
+
+* **chatpage/:** resolved chat page aria issue by adopting useState to manage sidebar toggle ([d0041af](https://github.com/KemingHe/buckeye-gpt/commit/d0041afcd7d8310fb2233777abf90c9b78938722)), closes [#78](https://github.com/KemingHe/buckeye-gpt/issues/78)
+
 ## [0.11.1](https://github.com/KemingHe/buckeye-gpt/compare/v0.11.0...v0.11.1) (2025-01-21)
 
 ## [0.11.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.10.0...v0.11.0) (2025-01-21)
