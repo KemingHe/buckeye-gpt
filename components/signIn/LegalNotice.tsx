@@ -10,11 +10,25 @@ export default function LegalNotice(): JSX.Element {
   return (
     <p className="text-center leading-snug text-sm">
       By signing in, you acknowledge that you have read and agree to our&nbsp;
-      <Link className="link" href={PRIVACY_POLICY_LINK}>
+      <Link
+        href={PRIVACY_POLICY_LINK}
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open privacy policy in a new tab"
+        aria-current="false"
+      >
         Privacy Policy
       </Link>
       &nbsp;and&nbsp;
-      <Link className="link" href={TERMS_AND_CONDITIONS_LINK}>
+      <Link
+        href={TERMS_AND_CONDITIONS_LINK}
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open terms and conditions in a new tab"
+        aria-current="false"
+      >
         Terms & Conditions
       </Link>
       .

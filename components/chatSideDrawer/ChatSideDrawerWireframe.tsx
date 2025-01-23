@@ -47,14 +47,14 @@ export function ChatSideDrawerWireframe({
         </div>
         {/* Close side drawer button. */}
         <button
-          className="flex-shrink-0 flex justify-end items-center h-12 lg:hidden"
+          className="flex-shrink-0 btn btn-block btn-ghost justify-end items-center px-2 rounded-none lg:hidden"
           type="button"
           onClick={closeSideDrawer}
           aria-controls={sideDrawerSectionId}
           aria-expanded={isSideDrawerOpen}
           aria-label="Close side bar"
         >
-          <ChevronLeftIcon className="size-9 pe-2" />
+          <ChevronLeftIcon className="size-7" />
         </button>
       </div>
     </section>

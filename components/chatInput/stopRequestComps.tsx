@@ -7,14 +7,14 @@ export interface StopChatRequestButtonProps {
   stop     : () => void;
 }
 
-export function StopChatRequestButton({
+export function StopChatRequestButtonMobile({
   isLoading,
   stop,
 }: StopChatRequestButtonProps): JSX.Element {
   return (
     <button
       type="button"
-      className="btn-error w-full btn btn-sm sm:btn-md"
+      className="btn-error btn btn-sm w-full sm:hidden"
       onClick={stop}
       disabled={!isLoading}
       aria-label="Stop chat request"
@@ -26,13 +26,31 @@ export function StopChatRequestButton({
   );
 }
 
+export function StopChatRequestButtonDesktop({
+  isLoading,
+  stop,
+}: StopChatRequestButtonProps): JSX.Element {
+  return (
+    <button
+      type="button"
+      className="hidden sm:flex btn-error btn btn-square"
+      onClick={stop}
+      disabled={!isLoading}
+      aria-label="Stop chat request"
+      aria-disabled={!isLoading}
+    >
+      <StopIcon className="size-5" />
+    </button>
+  );
+}
+
 export function StopChatRequestKBD(): JSX.Element {
   return (
     <div
       className="hidden sm:flex font-semibold"
-      aria-label="Pressing Backspace or Delete key also stops chat request"
+      aria-label="Pressing Delete or Bacspace key also stops chat request"
     >
-      <kbd className="kbd kbd-xs">Backspace</kbd>
+      <kbd className="kbd kbd-xs">Delete</kbd>
     </div>
   );
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.12.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.11.3...v0.12.0) (2025-01-23)
+
+### Features
+
+* **chatdocs/:** added disclaimer w/ link, for un-authed users, added terms and privacy links ([f47fb20](https://github.com/KemingHe/buckeye-gpt/commit/f47fb20eced97380292a2007cfa4bc67a30b184f)), closes [#91](https://github.com/KemingHe/buckeye-gpt/issues/91) [#33](https://github.com/KemingHe/buckeye-gpt/issues/33) [#32](https://github.com/KemingHe/buckeye-gpt/issues/32) [#27](https://github.com/KemingHe/buckeye-gpt/issues/27)
+
 ## [0.11.3](https://github.com/KemingHe/buckeye-gpt/compare/v0.11.2...v0.11.3) (2025-01-23)
 
 ## [0.11.2](https://github.com/KemingHe/buckeye-gpt/compare/v0.11.1...v0.11.2) (2025-01-22)

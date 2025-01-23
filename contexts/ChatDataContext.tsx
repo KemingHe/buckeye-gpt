@@ -11,6 +11,7 @@ import {
   type JSX,
   type ReactNode,
   createContext,
+  useCallback,
   useContext,
 } from 'react';
 
@@ -33,6 +34,7 @@ export interface ChatDataContextValue {
   messages          : Message[];
   inputValue        : string;
   // Chat actions.
+  clearMessages     : () => void;
   setInputValue     : (value: string) => void;
   handleSubmit      : (event?: FormEvent<HTMLFormElement>) => void;
   handleInputChange : (event: ChangeEvent<HTMLTextAreaElement>) => void;
@@ -46,12 +48,12 @@ export function ChatDataProvider({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   const clientUser: CurrentUser | CurrentInternalUser | null = useUser();
-
   const {
     isLoading,
     error,
     messages,
     input,
+    setMessages,
     setInput,
     handleSubmit,
     handleInputChange,
@@ -63,6 +65,10 @@ export function ChatDataProvider({
     onError: (e) => console.error(e),
   });
 
+  const clearMessages = useCallback(() => {
+    setMessages([]);
+  }, []);
+
   // No need to memoize because:
   // 1. All values from useChat() are already stable references;
   // 2. Creating a simple object with references is cheap;
@@ -72,6 +78,7 @@ export function ChatDataProvider({
     error,
     messages,
     inputValue: input,
+    clearMessages,
     setInputValue: setInput,
     handleSubmit,
     handleInputChange,
