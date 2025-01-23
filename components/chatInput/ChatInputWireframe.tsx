@@ -48,12 +48,10 @@ export function ChatInputWireframe({
   isTextAreaExpanded,
   toggleTextAreaExpanded,
 }: ChatInputWireframeProps): JSX.Element {
+  const inputHeadingId: string = 'chat-input-heading';
   return (
-    <section
-      className="flex-shrink-0 mt-1.5"
-      aria-labelledby="chat-input-section-heading"
-    >
-      <h2 id="chat-input-section-heading" className="sr-only">
+    <section className="flex-shrink-0 mt-1.5" aria-labelledby={inputHeadingId}>
+      <h2 id={inputHeadingId} className="sr-only">
         Chat Input Section
       </h2>
       <form

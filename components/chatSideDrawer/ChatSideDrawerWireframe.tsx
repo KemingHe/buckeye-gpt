@@ -1,32 +1,36 @@
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 import type { JSX, RefObject } from 'react';
 
-export interface ChatSideDrawerProps {
-  isSideDrawerOpen: boolean;
-  closeSideDrawer: () => void;
-  sideDrawerHeadingRef: RefObject<HTMLHeadingElement>;
+// biome-ignore format: added alignment for clarity.
+export interface ChatSideDrawerWireframeProps {
+  sideDrawerSectionId   : string;
+  isSideDrawerOpen      : boolean;
+  closeSideDrawer       : () => void;
+  sideDrawerOpenFocusRef: RefObject<HTMLHeadingElement>;
 }
 
-export function ChatSideDrawer({
+export function ChatSideDrawerWireframe({
+  sideDrawerSectionId,
   isSideDrawerOpen,
   closeSideDrawer,
-  sideDrawerHeadingRef,
-}: ChatSideDrawerProps): JSX.Element {
+  sideDrawerOpenFocusRef,
+}: ChatSideDrawerWireframeProps): JSX.Element {
+  const sideDrawerHeadingId: string = 'chat-side-drawer-heading';
   return (
     <section
-      id="side-drawer"
+      id={sideDrawerSectionId}
       className="drawer-side"
-      aria-labelledby="side-drawer-heading"
+      aria-labelledby={sideDrawerHeadingId}
       aria-hidden={!isSideDrawerOpen}
       tabIndex={isSideDrawerOpen ? undefined : -1}
     >
       <h2
-        ref={sideDrawerHeadingRef}
-        id="side-drawer-heading"
+        id={sideDrawerHeadingId}
         className="sr-only"
+        ref={sideDrawerOpenFocusRef}
         tabIndex={-1}
       >
-        Side bar
+        Chat Side Bar
       </h2>
       {/* Non-focusable overlay, can also be used to close side bar. */}
       <button
@@ -46,7 +50,7 @@ export function ChatSideDrawer({
           className="flex-shrink-0 flex justify-end items-center h-12 lg:hidden"
           type="button"
           onClick={closeSideDrawer}
-          aria-controls="side-drawer"
+          aria-controls={sideDrawerSectionId}
           aria-expanded={isSideDrawerOpen}
           aria-label="Close side bar"
         >
