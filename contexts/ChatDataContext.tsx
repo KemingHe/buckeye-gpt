@@ -12,7 +12,6 @@ import {
   type ReactNode,
   createContext,
   useContext,
-  useMemo,
 } from 'react';
 
 import {
@@ -23,35 +22,27 @@ import {
   // LANGCHAIN_ANTHROPIC_CLAUDE_LITE_API_ENDPOINT,
   // LANGCHAIN_ANTHROPIC_CLAUDE_REGULAR_API_ENDPOINT,
 } from '@/constants/apiEndpointConstants';
+import type { UseChatHelpers } from '@/hooks/useChat/UseChatHelpers';
 import { useChat } from '@/hooks/useChat/useChat';
 
 // biome-ignore format: added alignment for clarity.
-export interface ChatContextValue {
+export interface ChatDataContextValue {
   // Chat states.
-  //  - Loading state.
   isLoading         : boolean;
-
-  //  - Error state.
   error             : Error | undefined;
-
-  //  - Message state.
   messages          : Message[];
-
-  //  - (Form) Input state and handlers.
   inputValue        : string;
+  // Chat actions.
   setInputValue     : (value: string) => void;
-
-  //  - Form event handlers.
   handleSubmit      : (event?: FormEvent<HTMLFormElement>) => void;
   handleInputChange : (event: ChangeEvent<HTMLTextAreaElement>) => void;
   handleStopRequest : () => void;
 }
 
-const ChatContext: Context<ChatContextValue | undefined> = createContext<
-  ChatContextValue | undefined
->(undefined);
+const ChatDataContext: Context<ChatDataContextValue | undefined> =
+  createContext<ChatDataContextValue | undefined>(undefined);
 
-export function ChatProvider({
+export function ChatDataProvider({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   const clientUser: CurrentUser | CurrentInternalUser | null = useUser();
@@ -65,47 +56,39 @@ export function ChatProvider({
     handleSubmit,
     handleInputChange,
     stop,
-  } = useChat({
+  }: UseChatHelpers = useChat({
     api: clientUser
       ? LANGCHAIN_OPENAI_REGULAR_API_ENDPOINT
       : LANGCHAIN_OPENAI_LITE_API_ENDPOINT,
     onError: (e) => console.error(e),
   });
 
-  const memoizedChatContextValue: ChatContextValue = useMemo(
-    () => ({
-      isLoading,
-      error,
-      messages,
-      inputValue: input,
-      setInputValue: setInput,
-      handleSubmit,
-      handleInputChange,
-      handleStopRequest: stop,
-    }),
-    [
-      isLoading,
-      error,
-      messages,
-      input,
-      setInput,
-      handleSubmit,
-      handleInputChange,
-      stop,
-    ],
-  );
+  // No need to memoize because:
+  // 1. All values from useChat() are already stable references;
+  // 2. Creating a simple object with references is cheap;
+  // 3. When chat state changes, consumers would re-render anyway.
+  const contextValue: ChatDataContextValue = {
+    isLoading,
+    error,
+    messages,
+    inputValue: input,
+    setInputValue: setInput,
+    handleSubmit,
+    handleInputChange,
+    handleStopRequest: stop,
+  };
 
   return (
-    <ChatContext.Provider value={memoizedChatContextValue}>
+    <ChatDataContext.Provider value={contextValue}>
       {children}
-    </ChatContext.Provider>
+    </ChatDataContext.Provider>
   );
 }
 
-export function useChatContext(): ChatContextValue {
-  const context: ChatContextValue | undefined = useContext(ChatContext);
+export function useChatDataContext(): ChatDataContextValue {
+  const context: ChatDataContextValue | undefined = useContext(ChatDataContext);
   if (context === undefined) {
-    throw new Error('useChatContext must be used within a ChatProvider');
+    throw new Error('useChatDataContext must be used within a ChatDatarovider');
   }
   return context;
 }

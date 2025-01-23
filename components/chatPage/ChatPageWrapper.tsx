@@ -1,42 +1,26 @@
-import {
-  type CurrentInternalUser,
-  type CurrentUser,
-  useUser,
-} from '@stackframe/stack';
-import { type JSX, useEffect, useRef, useState } from 'react';
+import type { JSX } from 'react';
 
 import ChatInputWrapper from '@/components/chatInput/ChatInputWrapper';
 import ChatMessagesWrapper from '@/components/chatMessages/ChatMessagesWrapper';
+import ChatNavbarWrapper from '@/components/chatNavbar/ChatNavbarWrapper';
 import { ChatPageWireframe } from '@/components/chatPage/ChatPageWireframe';
-import { ChatProvider } from '@/contexts/ChatContext';
+import ChatSideDrawerWrapper from '@/components/chatSideDrawer/ChatSideDrawerWrapper';
+import {
+  type ChatLayoutContextValue,
+  useChatLayoutContext,
+} from '@/contexts/ChatLayoutContext';
 
 export default function ChatPageWrapper(): JSX.Element {
-  const clientUser: CurrentUser | CurrentInternalUser | null = useUser();
+  const { isSideDrawerOpen }: ChatLayoutContextValue = useChatLayoutContext();
 
-  const [isSideDrawerOpen, setIsSideDrawerOpen] = useState<boolean>(false);
-  const openSideDrawer = () => setIsSideDrawerOpen(true);
-  const closeSideDrawer = () => setIsSideDrawerOpen(false);
-
-  const sideDrawerHeadingRef = useRef<HTMLHeadingElement>(null);
-  useEffect(() => {
-    if (isSideDrawerOpen && sideDrawerHeadingRef.current) {
-      sideDrawerHeadingRef.current.focus();
-    }
-  }, [isSideDrawerOpen]);
-
-  // TODO: Use context instead of prop drilling.
   return (
-    <ChatProvider>
-      <ChatPageWireframe
-        clientUser={clientUser}
-        isSideDrawerOpen={isSideDrawerOpen}
-        openSideDrawer={openSideDrawer}
-        closeSideDrawer={closeSideDrawer}
-        sideDrawerHeadingRef={sideDrawerHeadingRef}
-      >
-        <ChatMessagesWrapper />
-        <ChatInputWrapper />
-      </ChatPageWireframe>
-    </ChatProvider>
+    <ChatPageWireframe
+      isSideDrawerOpen={isSideDrawerOpen}
+      navbar={<ChatNavbarWrapper />}
+      sideDrawer={<ChatSideDrawerWrapper />}
+    >
+      <ChatMessagesWrapper />
+      <ChatInputWrapper />
+    </ChatPageWireframe>
   );
 }

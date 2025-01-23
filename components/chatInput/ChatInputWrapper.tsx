@@ -9,7 +9,10 @@ import {
 import { ChatInputWireframe } from '@/components/chatInput/ChatInputWireframe';
 import { textAreaKBDHandler } from '@/components/chatInput/textAreaKBDHandler';
 import { useStopRequestKBD } from '@/components/chatInput/useStopRequestKBD';
-import { type ChatContextValue, useChatContext } from '@/contexts/ChatContext';
+import {
+  type ChatDataContextValue,
+  useChatDataContext,
+} from '@/contexts/ChatDataContext';
 
 export default function ChatInputWrapper(): JSX.Element {
   const {
@@ -19,7 +22,7 @@ export default function ChatInputWrapper(): JSX.Element {
     handleSubmit,
     handleInputChange,
     handleStopRequest,
-  }: ChatContextValue = useChatContext();
+  }: ChatDataContextValue = useChatDataContext();
 
   // ---------------------------------------------------------------------------
   // Auto re-focus on textarea when loading is done.

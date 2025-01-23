@@ -1,31 +1,18 @@
-import type { CurrentInternalUser, CurrentUser } from '@stackframe/stack';
-import type { JSX, ReactNode, RefObject } from 'react';
-
-import { ChatNavbar } from '@/components/chatNavbar/ChatNavbar';
-import { ChatSideDrawer } from '@/components/chatSideDrawer/ChatSideDrawer';
+import type { JSX, ReactNode } from 'react';
 
 // biome-ignore format: added alignment for clarity.
 export interface ChatPageWireframeProps {
-  // User information (or lack of).
-  clientUser          : CurrentUser | CurrentInternalUser | null;
-
-  // Side drawer state, methods, and heading reference.
-  isSideDrawerOpen    : boolean;
-  openSideDrawer      : () => void;
-  closeSideDrawer     : () => void;
-  sideDrawerHeadingRef: RefObject<HTMLHeadingElement>;
-
-  // Chat messages and input sections.
-  children            : ReactNode;
+  isSideDrawerOpen: boolean;
+  navbar          : ReactNode;
+  children        : ReactNode;
+  sideDrawer      : ReactNode;
 }
 
 export function ChatPageWireframe({
-  clientUser,
   isSideDrawerOpen,
-  openSideDrawer,
-  closeSideDrawer,
-  sideDrawerHeadingRef,
+  navbar,
   children,
+  sideDrawer,
 }: ChatPageWireframeProps): JSX.Element {
   return (
     <main className="drawer lg:drawer-open h-full">
@@ -39,19 +26,10 @@ export function ChatPageWireframe({
         tabIndex={-1}
       />
       <div className="drawer-content flex flex-grow flex-col min-h-0">
-        <ChatNavbar
-          clientUser={clientUser}
-          isSideDrawerOpen={isSideDrawerOpen}
-          openSideDrawer={openSideDrawer}
-        />
-        {/* Chat messages and input sections. */}
+        {navbar}
         {children}
       </div>
-      <ChatSideDrawer
-        isSideDrawerOpen={isSideDrawerOpen}
-        closeSideDrawer={closeSideDrawer}
-        sideDrawerHeadingRef={sideDrawerHeadingRef}
-      />
+      {sideDrawer}
     </main>
   );
 }
