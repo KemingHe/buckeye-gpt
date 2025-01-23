@@ -11,11 +11,13 @@ import type {
 } from 'react';
 
 import {
-  SendChatMessageButton,
+  SendChatMessageButtonDesktop,
+  SendChatMessageButtonMobile,
   SendChatMessageKBD,
 } from '@/components/chatInput/sendMessageComps';
 import {
-  StopChatRequestButton,
+  StopChatRequestButtonDesktop,
+  StopChatRequestButtonMobile,
   StopChatRequestKBD,
 } from '@/components/chatInput/stopRequestComps';
 
@@ -50,12 +52,12 @@ export function ChatInputWireframe({
 }: ChatInputWireframeProps): JSX.Element {
   const inputHeadingId: string = 'chat-input-heading';
   return (
-    <section className="flex-shrink-0 mt-1.5" aria-labelledby={inputHeadingId}>
+    <section className="flex-shrink-0" aria-labelledby={inputHeadingId}>
       <h2 id={inputHeadingId} className="sr-only">
         Chat Input Section
       </h2>
       <form
-        className="flex flex-col sm:flex-row justify-center items-center gap-2 p-4"
+        className="flex flex-col sm:flex-row justify-center items-center gap-2 mx-4 my-2"
         onSubmit={handleSubmit}
         aria-label="Chat input form"
       >
@@ -75,25 +77,31 @@ export function ChatInputWireframe({
             aria-label="Chat input textarea"
             aria-disabled={isLoading}
           />
-          <button
-            type="button"
-            className="absolute top-0 start-0 -ms-3.5 -mt-3.5 btn btn-ghost btn-sm btn-square transition transform active:scale-90"
-            onClick={toggleTextAreaExpanded}
-            aria-label={
-              isTextAreaExpanded ? 'Collapse textarea' : 'Expand textarea'
-            }
-          >
-            {isTextAreaExpanded ? (
-              <ChevronDownIcon className="size-8" />
-            ) : (
-              <ChevronUpDownIcon className="size-8" />
-            )}
-          </button>
+          <div className="absolute top-0 start-0 -ms-3.5 -mt-3.5">
+            <button
+              type="button"
+              className="btn btn-ghost btn-sm btn-square transition transform active:scale-90"
+              onClick={toggleTextAreaExpanded}
+              aria-label={
+                isTextAreaExpanded ? 'Collapse textarea' : 'Expand textarea'
+              }
+            >
+              {isTextAreaExpanded ? (
+                <ChevronDownIcon className="size-8" />
+              ) : (
+                <ChevronUpDownIcon className="size-8" />
+              )}
+            </button>
+          </div>
         </div>
-        <div className="flex flex-col justify-center items-center gap-2 w-full sm:w-28 transition-all">
+        <div className="flex flex-col justify-center items-center gap-3 w-full sm:w-16 transition-all">
           {isLoading ? (
             <>
-              <StopChatRequestButton
+              <StopChatRequestButtonMobile
+                isLoading={isLoading}
+                stop={handleStopRequest}
+              />
+              <StopChatRequestButtonDesktop
                 isLoading={isLoading}
                 stop={handleStopRequest}
               />
@@ -101,7 +109,8 @@ export function ChatInputWireframe({
             </>
           ) : (
             <>
-              <SendChatMessageButton isLoading={isLoading} />
+              <SendChatMessageButtonMobile isLoading={isLoading} />
+              <SendChatMessageButtonDesktop isLoading={isLoading} />
               <SendChatMessageKBD />
             </>
           )}

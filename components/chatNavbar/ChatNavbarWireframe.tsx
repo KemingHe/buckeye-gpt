@@ -1,7 +1,5 @@
-import { Bars3Icon } from '@heroicons/react/20/solid';
+import { Bars3Icon, PencilSquareIcon } from '@heroicons/react/20/solid';
 import type { CurrentInternalUser, CurrentUser } from '@stackframe/stack';
-import Image from 'next/image';
-import Link from 'next/link';
 import type { JSX, RefObject } from 'react';
 
 import {
@@ -9,7 +7,6 @@ import {
   SignOutLinkButton,
   SignUpLinkButton,
 } from '@/components/chatNavbar/navbarButtons';
-import { HOME_ROUTE } from '@/constants/routeConstants';
 
 // biome-ignore format: added alignment for clarity.
 export interface ChatNavbarWireframeProps {
@@ -20,6 +17,8 @@ export interface ChatNavbarWireframeProps {
   isSideDrawerOpen      : boolean;
   openSideDrawer        : () => void;
   sideDrawerCloseFocusRef: RefObject<HTMLHeadingElement>;
+  // Chat data actions.
+  clearMessages         : () => void;
 }
 
 export function ChatNavbarWireframe({
@@ -28,13 +27,11 @@ export function ChatNavbarWireframe({
   isSideDrawerOpen,
   openSideDrawer,
   sideDrawerCloseFocusRef,
+  clearMessages,
 }: ChatNavbarWireframeProps): JSX.Element {
   const navbarHeadingId: string = 'chat-navbar-heading';
   return (
-    <section
-      className="navbar w-full flex-shrink-0 p-2 flex items-center"
-      aria-labelledby={navbarHeadingId}
-    >
+    <section className="navbar p-4" aria-labelledby={navbarHeadingId}>
       <h2
         id={navbarHeadingId}
         className="sr-only"
@@ -43,39 +40,34 @@ export function ChatNavbarWireframe({
       >
         Chat Navigation Bar
       </h2>
-      {/* Hamburger menu button or Buckeye GPT logo. */}
-      <div className="flex-none">
+      {/* Hamburger menu button and clear chat button. */}
+      <div className="flex-none flex gap-3 lg:gap-0">
         {/* Display hamburger menu button when viewport is less than lg. */}
         <button
-          className="btn btn-square btn-ghost lg:hidden"
+          className="btn btn-sm btn-square btn-neutral lg:hidden"
           type="button"
           onClick={openSideDrawer}
           aria-controls={sideDrawerSectionId}
           aria-expanded={isSideDrawerOpen}
           aria-label="Open side bar"
+          tabIndex={undefined}
         >
-          <Bars3Icon className="size-7" />
+          <Bars3Icon className="size-5" aria-hidden="true" />
         </button>
-        {/* Display Buckeye GPT logo when viewport is lg or greater. */}
-        <Link
-          href={HOME_ROUTE}
-          className="hidden lg:flex flex-shrink-0 justify-center items-center mx-2"
-          aria-label="Go to Buckeye GPT homepage"
-          aria-current="false"
+        {/* Clear chat button. */}
+        <button
+          className="btn btn-sm btn-square btn-neutral"
+          type="button"
+          onClick={clearMessages}
+          aria-label="Clear chat conversation messages"
         >
-          <Image
-            src="/images/transparent-buckeye-gpt-icon-512x512px.png"
-            alt="Buckeye GPT logo"
-            width={40}
-            height={40}
-            priority={true}
-          />
-        </Link>
+          <PencilSquareIcon className="size-5" aria-hidden="true" />
+        </button>
       </div>
       {/* Navbar items. */}
-      <div className="px-1 flex-1">{/* TODO */}</div>
+      <div className="flex-1" />
       {/* Sign in/out link button (TODO: refactor). */}
-      <div className="flex-shrink-0 flex justify-center items-center gap-2 ms-2 me-1">
+      <div className="flex-none flex justify-center items-center gap-2">
         {clientUser ? (
           <SignOutLinkButton />
         ) : (

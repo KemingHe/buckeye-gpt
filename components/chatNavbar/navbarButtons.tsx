@@ -11,11 +11,11 @@ export function SignOutLinkButton(): JSX.Element {
   return (
     <Link
       href={AUTH_SIGN_OUT_ROUTE}
-      className="btn btn-square btn-ghost -me-1"
+      className="btn btn-sm btn-square btn-neutral"
       aria-label="Go to sign out page"
       aria-current="false"
     >
-      <ArrowRightStartOnRectangleIcon className="size-7" aria-hidden="true" />
+      <ArrowRightStartOnRectangleIcon className="size-5" aria-hidden="true" />
     </Link>
   );
 }
@@ -28,7 +28,7 @@ export function SignInLinkButton(): JSX.Element {
       aria-label="Go to sign in page"
       aria-current="false"
     >
-      Sign In
+      Log In
     </Link>
   );
 }

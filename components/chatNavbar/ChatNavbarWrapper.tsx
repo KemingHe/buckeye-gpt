@@ -7,6 +7,10 @@ import type { JSX } from 'react';
 
 import { ChatNavbarWireframe } from '@/components/chatNavbar/ChatNavbarWireframe';
 import {
+  type ChatDataContextValue,
+  useChatDataContext,
+} from '@/contexts/ChatDataContext';
+import {
   type ChatLayoutContextValue,
   useChatLayoutContext,
 } from '@/contexts/ChatLayoutContext';
@@ -19,6 +23,7 @@ export default function ChatNavbarWrapper(): JSX.Element {
     openSideDrawer,
     sideDrawerCloseFocusRef,
   }: ChatLayoutContextValue = useChatLayoutContext();
+  const { clearMessages }: ChatDataContextValue = useChatDataContext();
 
   return (
     <ChatNavbarWireframe
@@ -27,6 +32,7 @@ export default function ChatNavbarWrapper(): JSX.Element {
       isSideDrawerOpen={isSideDrawerOpen}
       openSideDrawer={openSideDrawer}
       sideDrawerCloseFocusRef={sideDrawerCloseFocusRef}
+      clearMessages={clearMessages}
     />
   );
 }
