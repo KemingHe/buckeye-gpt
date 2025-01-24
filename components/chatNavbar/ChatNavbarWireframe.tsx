@@ -1,4 +1,4 @@
-import { Bars3Icon, PencilSquareIcon } from '@heroicons/react/20/solid';
+import { ArrowPathIcon, Bars3Icon } from '@heroicons/react/20/solid';
 import type { CurrentInternalUser, CurrentUser } from '@stackframe/stack';
 import type { JSX, RefObject } from 'react';
 
@@ -61,7 +61,7 @@ export function ChatNavbarWireframe({
           onClick={clearMessages}
           aria-label="Clear chat conversation messages"
         >
-          <PencilSquareIcon className="size-5" aria-hidden="true" />
+          <ArrowPathIcon className="size-5" aria-hidden="true" />
         </button>
       </div>
       {/* Navbar items. */}

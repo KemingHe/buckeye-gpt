@@ -1,6 +1,8 @@
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 import type { JSX, RefObject } from 'react';
 
+import GitHubCorner from '@/components/githubCorner/GitHubCorner';
+
 // biome-ignore format: added alignment for clarity.
 export interface ChatSideDrawerWireframeProps {
   sideDrawerSectionId   : string;
@@ -41,6 +43,8 @@ export function ChatSideDrawerWireframe({
         tabIndex={-1}
       />
       <div className="w-80 h-full bg-base-100 flex flex-col border-r border-neutral">
+        {/* GitHub corner. */}
+        <GitHubCorner />
         {/* Side drawer content. */}
         <div className="flex-grow min-h-0 overflow-y-auto flex flex-col justify-center items-center">
           <p className="text-center">History coming soon...</p>
