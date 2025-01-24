@@ -1,0 +1,79 @@
+/*
+ * GitHub Corner CSS module.
+ *
+ * Adapted from https://github.com/tholman/github-corners under MIT License.
+ */
+
+/* Base corner SVG styling. */
+/* biome-ignore format: added alignment for clarity. */
+.octo-svg {
+  fill             : #fff;
+  color            : #151513;
+  position         : absolute;
+  top              : 0;
+  border           : 0;
+  left             : 0;
+  transform        : scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+}
+
+/* Animation origin point for the arm. */
+.octo-arm {
+  transform-origin: 130px 106px;
+  -webkit-transform-origin: 130px 106px;
+}
+
+/* Play wave animation on hover. */
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+  -webkit-animation: octocat-wave 560ms ease-in-out;
+}
+
+/* Wave animation keyframes. */
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+  }
+}
+
+@-webkit-keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Auto-play wave animation on mobile viewports. */
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+    -webkit-animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+    -webkit-animation: octocat-wave 560ms ease-in-out;
+  }
+}
