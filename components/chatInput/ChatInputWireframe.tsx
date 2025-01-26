@@ -20,6 +20,7 @@ import {
   StopChatRequestButtonMobile,
   StopChatRequestKBD,
 } from '@/components/chatInput/stopRequestComps';
+import { SimpleTooltip } from '@/components/tooltip/SimpleTooltip';
 
 // biome-ignore format: added alignment for clarity.
 export interface ChatInputWireframeProps {
@@ -51,6 +52,15 @@ export function ChatInputWireframe({
   toggleTextAreaExpanded,
 }: ChatInputWireframeProps): JSX.Element {
   const inputHeadingId: string = 'chat-input-heading';
+  const textAreaId: string = 'chat-input-textarea';
+  const expandTextAreaButtonTooltipId: string =
+    'expand-textarea-button-tooltip';
+
+  const getExpandTextAreaButtonLabel = (): string => {
+    if (isTextAreaExpanded) return 'Collapse textarea';
+    return 'Expand textarea';
+  };
+
   return (
     <section className="flex-shrink-0" aria-labelledby={inputHeadingId}>
       <h2 id={inputHeadingId} className="sr-only">
@@ -63,8 +73,9 @@ export function ChatInputWireframe({
       >
         <div className="relative w-full sm:w-auto sm:flex-grow">
           <textarea
-            ref={textAreaRef}
+            id={textAreaId}
             className={`textarea textarea-bordered border-neutral w-full resize-none overflow-y-auto transition-all duration-300 ${isTextAreaExpanded ? 'h-96' : 'h-24'} leading-normal`}
+            ref={textAreaRef}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             disabled={isLoading}
@@ -82,9 +93,12 @@ export function ChatInputWireframe({
               type="button"
               className="btn btn-ghost btn-sm btn-square transition transform active:scale-90"
               onClick={toggleTextAreaExpanded}
-              aria-label={
-                isTextAreaExpanded ? 'Collapse textarea' : 'Expand textarea'
-              }
+              aria-label={getExpandTextAreaButtonLabel()}
+              aria-controls={textAreaId}
+              aria-expanded={isTextAreaExpanded}
+              data-tooltip-id={expandTextAreaButtonTooltipId}
+              data-tooltip-content={getExpandTextAreaButtonLabel()}
+              data-tooltip-place="top-end"
             >
               {isTextAreaExpanded ? (
                 <ChevronDownIcon className="size-8" />
@@ -92,6 +106,7 @@ export function ChatInputWireframe({
                 <ChevronUpDownIcon className="size-8" />
               )}
             </button>
+            <SimpleTooltip id={expandTextAreaButtonTooltipId} />
           </div>
         </div>
         <div className="flex flex-col justify-center items-center gap-3 w-full sm:w-16 transition-all">

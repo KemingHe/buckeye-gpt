@@ -6,15 +6,21 @@ import {
   TERMS_AND_CONDITIONS_LINK,
 } from '@/constants/externalLinkConstants';
 
-export default function ChatPrivacyAndTerms(): JSX.Element {
+export default function ChatTermsAndPrivacy(): JSX.Element {
   const privacyAndTermsHeadingId: string = 'chat-privacy-and-terms-heading';
   return (
     <section className="w-full mb-2" aria-labelledby={privacyAndTermsHeadingId}>
       <h2 id={privacyAndTermsHeadingId} className="sr-only">
-        Privacy and Terms and Conditions
+        Terms and Conditions and Privacy Policy
       </h2>
       <p className="text-xs text-center leading-snug">
-        By using our service, you agree to our&nbsp;
+        <span className="sr-only">
+          By using our service, you agree to our terms and conditions and have
+          read our privacy policy.
+        </span>
+        <span aria-hidden="true">
+          By using our service, you agree to our&nbsp;
+        </span>
         <Link
           href={TERMS_AND_CONDITIONS_LINK}
           className="link"
@@ -25,7 +31,7 @@ export default function ChatPrivacyAndTerms(): JSX.Element {
         >
           Terms
         </Link>
-        &nbsp;and have read our&nbsp;
+        <span aria-hidden="true">&nbsp;and have read our&nbsp;</span>
         <Link
           href={PRIVACY_POLICY_LINK}
           className="link"
@@ -36,7 +42,7 @@ export default function ChatPrivacyAndTerms(): JSX.Element {
         >
           Privacy Policy
         </Link>
-        .
+        <span aria-hidden="true">.</span>
       </p>
     </section>
   );
