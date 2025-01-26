@@ -27,16 +27,18 @@ describe('NameDotNumberSchema', () => {
   it('throws the correct error message for invalid string', () => {
     const result = NameDotNumberSchema.safeParse('buckeye.0');
     expect(result.success).toBe(false);
+
     const parseError: ZodError | undefined = result.error;
-    expect(parseError).not.toBeUndefined();
+    expect(parseError).toBeDefined();
     expect(parseError?.issues[0].message).toEqual('Enter a valid name.#');
   });
 
   it('throws the correct error message for invalid type', () => {
     const result = NameDotNumberSchema.safeParse(1.2);
     expect(result.success).toBe(false);
+
     const parseError: ZodError | undefined = result.error;
-    expect(parseError).not.toBeUndefined();
+    expect(parseError).toBeDefined();
     expect(parseError?.issues[0].message).toEqual('Enter a valid name.#');
   });
 

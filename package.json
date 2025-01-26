@@ -46,8 +46,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@ai-sdk/provider-utils": "^2.1.2",
-    "@ai-sdk/ui-utils": "^1.1.3",
+    "@ai-sdk/provider-utils": "^2.1.4",
+    "@ai-sdk/ui-utils": "^1.1.5",
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^3.10.0",
     "@keminghe/osu": "^4.0.1",
@@ -57,7 +57,7 @@
     "@langchain/openai": "^0.3.17",
     "@next/third-parties": "^15.1.6",
     "@stackframe/stack": "^2.7.6",
-    "ai": "^4.1.5",
+    "ai": "^4.1.7",
     "canvas-confetti": "^1.9.3",
     "langchain": "^0.3.13",
     "next": "^15.1.6",
