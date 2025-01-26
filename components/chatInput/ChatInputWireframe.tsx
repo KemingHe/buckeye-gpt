@@ -98,7 +98,7 @@ export function ChatInputWireframe({
               aria-expanded={isTextAreaExpanded}
               data-tooltip-id={expandTextAreaButtonTooltipId}
               data-tooltip-content={getExpandTextAreaButtonLabel()}
-              data-tooltip-place="top-end"
+              data-tooltip-place="top-start"
             >
               {isTextAreaExpanded ? (
                 <ChevronDownIcon className="size-8" />

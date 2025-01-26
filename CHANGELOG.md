@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.13.1](https://github.com/KemingHe/buckeye-gpt/compare/v0.13.0...v0.13.1) (2025-01-26)
+
+### Bug Fixes
+
+* **data-tooltip-place:** review react-tooltip docs, corrected placement for buggy components ([b826847](https://github.com/KemingHe/buckeye-gpt/commit/b82684785e20c3ef7ab54010a880a26a56228996)), closes [#98](https://github.com/KemingHe/buckeye-gpt/issues/98)
+
 ## [0.13.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.12.1...v0.13.0) (2025-01-26)
 
 ### Features

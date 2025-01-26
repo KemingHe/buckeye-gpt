@@ -44,7 +44,7 @@ export function StopChatRequestButtonDesktop({
         aria-disabled={!isLoading}
         data-tooltip-id={tooltipId}
         data-tooltip-content="Stop request"
-        data-tooltip-place="top-start"
+        data-tooltip-place="top-end"
       >
         <StopCircleIcon className="size-5" aria-hidden="true" />
       </button>
@@ -66,7 +66,7 @@ export function StopChatRequestKBD(): JSX.Element {
         className="kbd kbd-xs"
         data-tooltip-id={tooltipId}
         data-tooltip-content={kbdDescription}
-        data-tooltip-place="top-start"
+        data-tooltip-place="top-end"
       >
         Delete
       </kbd>

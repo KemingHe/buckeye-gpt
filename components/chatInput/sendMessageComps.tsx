@@ -34,7 +34,7 @@ export function SendChatMessageButtonDesktop({
         aria-disabled={isLoading}
         data-tooltip-id={tooltipId}
         data-tooltip-content="Send message"
-        data-tooltip-place="top-start"
+        data-tooltip-place="top-end"
       >
         <PaperAirplaneIcon className="size-5" aria-hidden="true" />
       </button>
@@ -52,7 +52,7 @@ export function SendChatMessageKBD(): JSX.Element {
         className="kbd kbd-xs"
         data-tooltip-id={tooltipId}
         data-tooltip-content={kbdDescription}
-        data-tooltip-place="top-start"
+        data-tooltip-place="top-end"
       >
         Enter
       </kbd>

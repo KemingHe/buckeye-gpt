@@ -19,7 +19,7 @@ export function SignOutLinkButton(): JSX.Element {
         aria-current="false"
         data-tooltip-id={tooltipId}
         data-tooltip-content="Sign Out"
-        data-tooltip-place="bottom-start"
+        data-tooltip-place="bottom-end"
       >
         <ArrowRightStartOnRectangleIcon className="size-5" aria-hidden="true" />
       </Link>
