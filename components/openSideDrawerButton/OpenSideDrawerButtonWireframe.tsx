@@ -27,7 +27,7 @@ export function OpenSideDrawerButtonWireframe({
         aria-label="Open side bar"
         data-tooltip-id={tooltipId}
         data-tooltip-content="Open side bar"
-        data-tooltip-place="bottom-end"
+        data-tooltip-place="bottom-start"
       >
         <Bars3Icon className="size-5" aria-hidden="true" />
       </button>

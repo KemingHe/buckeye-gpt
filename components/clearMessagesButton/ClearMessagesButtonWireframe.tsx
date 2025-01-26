@@ -1,8 +1,8 @@
 import { ArrowPathIcon } from '@heroicons/react/20/solid';
 import type { JSX } from 'react';
 
-// import Modal from 'react-modal';
-// import { useState } from 'react';
+import { useState } from 'react';
+import Modal from 'react-modal';
 
 import { SimpleTooltip } from '@/components/tooltip/SimpleTooltip';
 
@@ -32,9 +32,10 @@ export function ClearMessagesButtonWireframe({
     return 'Clear chat conversation messages';
   };
 
-  // const [isModalOpen, setModalState] = useState<boolean>(false);
-  // const closeModal = (): void => setModalState(false);
-  // const openModal = (): void => setModalState(true);
+  // Experimental modal feature. TODO: refactor.
+  const [isModalOpen, setModalState] = useState<boolean>(false);
+  const closeModal = (): void => setModalState(false);
+  const openModal = (): void => setModalState(true);
 
   return (
     <>
@@ -43,12 +44,12 @@ export function ClearMessagesButtonWireframe({
         className="inline-block"
         data-tooltip-id={tooltipId}
         data-tooltip-content={getTooltipContent()}
-        data-tooltip-place="bottom-end"
+        data-tooltip-place="bottom-start"
       >
         <button
           className={`btn btn-sm btn-square btn-neutral ${isLoading || isMessagesEmpty ? 'btn-disabled pointer-events-none' : ''}`}
           type="button"
-          onClick={clearMessages}
+          onClick={openModal}
           disabled={isLoading || isMessagesEmpty}
           aria-disabled={isLoading || isMessagesEmpty}
           aria-label={getAriaLabel()}
@@ -57,8 +58,8 @@ export function ClearMessagesButtonWireframe({
         </button>
       </div>
       <SimpleTooltip id={tooltipId} />
-      {/* <Modal
-        contentLabel='Example modal'
+      <Modal
+        contentLabel="Clear messages modal"
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         shouldCloseOnEsc={true}
@@ -67,13 +68,11 @@ export function ClearMessagesButtonWireframe({
       >
         <form className="flex flex-col gap-4 bg-base-100 p-4 rounded-lg shadow-lg">
           <h2 className="text-lg font-bold">Clear messages</h2>
-          <p>Are you sure you want to clear all messages? This cannot be undone.</p>
+          <p>
+            Are you sure you want to clear all messages? This cannot be undone.
+          </p>
           <div className="flex justify-end items-center gap-3">
-            <button
-              className="btn"
-              type="button"
-              onClick={closeModal}
-            >
+            <button className="btn" type="button" onClick={closeModal}>
               Cancel
             </button>
             <button
@@ -88,7 +87,7 @@ export function ClearMessagesButtonWireframe({
             </button>
           </div>
         </form>
-      </Modal> */}
+      </Modal>
     </>
   );
 }
