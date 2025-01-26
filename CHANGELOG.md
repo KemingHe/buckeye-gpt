@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.13.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.12.1...v0.13.0) (2025-01-26)
+
+### Features
+
+* **tooltip/simpletooltip.tsx:** created generic tooltip comp from react-tooltip ([6385b04](https://github.com/KemingHe/buckeye-gpt/commit/6385b047bba873b0df1e753e70598085bd1169f0)), closes [#96](https://github.com/KemingHe/buckeye-gpt/issues/96)
+
 ## [0.12.1](https://github.com/KemingHe/buckeye-gpt/compare/v0.12.0...v0.12.1) (2025-01-24)
 
 ## [0.12.0](https://github.com/KemingHe/buckeye-gpt/compare/v0.11.3...v0.12.0) (2025-01-23)

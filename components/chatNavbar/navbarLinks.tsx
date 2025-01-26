@@ -2,21 +2,29 @@ import { ArrowRightStartOnRectangleIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import type { JSX } from 'react';
 
+import { SimpleTooltip } from '@/components/tooltip/SimpleTooltip';
 import {
   AUTH_SIGN_IN_ROUTE,
   AUTH_SIGN_OUT_ROUTE,
 } from '@/constants/routeConstants';
 
 export function SignOutLinkButton(): JSX.Element {
+  const tooltipId: string = 'sign-out-tooltip';
   return (
-    <Link
-      href={AUTH_SIGN_OUT_ROUTE}
-      className="btn btn-sm btn-square btn-neutral"
-      aria-label="Go to sign out page"
-      aria-current="false"
-    >
-      <ArrowRightStartOnRectangleIcon className="size-5" aria-hidden="true" />
-    </Link>
+    <>
+      <Link
+        href={AUTH_SIGN_OUT_ROUTE}
+        className="btn btn-sm btn-square btn-neutral"
+        aria-label="Go to sign out page"
+        aria-current="false"
+        data-tooltip-id={tooltipId}
+        data-tooltip-content="Sign Out"
+        data-tooltip-place="bottom-start"
+      >
+        <ArrowRightStartOnRectangleIcon className="size-5" aria-hidden="true" />
+      </Link>
+      <SimpleTooltip id={tooltipId} />
+    </>
   );
 }
 

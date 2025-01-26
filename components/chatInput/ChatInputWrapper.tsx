@@ -1,10 +1,4 @@
-import {
-  type JSX,
-  type KeyboardEvent,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { type JSX, type KeyboardEvent, useState } from 'react';
 
 import { ChatInputWireframe } from '@/components/chatInput/ChatInputWireframe';
 import { textAreaKBDHandler } from '@/components/chatInput/textAreaKBDHandler';
@@ -18,6 +12,7 @@ export default function ChatInputWrapper(): JSX.Element {
   const {
     isLoading,
     inputValue,
+    inputRef,
     setInputValue,
     handleSubmit,
     handleInputChange,
@@ -25,18 +20,9 @@ export default function ChatInputWrapper(): JSX.Element {
   }: ChatDataContextValue = useChatDataContext();
 
   // ---------------------------------------------------------------------------
-  // Auto re-focus on textarea when loading is done.
-  const taRef = useRef<HTMLTextAreaElement>(null);
-  useEffect(() => {
-    if (!isLoading && taRef.current) {
-      taRef.current.focus();
-    }
-  }, [isLoading]);
-
-  // ---------------------------------------------------------------------------
   // Textarea expand/collapse state.
   const [taExpanded, setTAExpanded] = useState(false);
-  const toggleTAExpanded = () => setTAExpanded(!taExpanded);
+  const toggleTAExpanded = (): void => setTAExpanded(!taExpanded);
 
   // ---------------------------------------------------------------------------
   // Textarea keyboard shortcuts:
@@ -68,7 +54,7 @@ export default function ChatInputWrapper(): JSX.Element {
       handleKeyDown={handleKeyDown}
       handleStopRequest={handleStopRequest}
       textAreaValue={inputValue}
-      textAreaRef={taRef}
+      textAreaRef={inputRef}
       isTextAreaExpanded={taExpanded}
       toggleTextAreaExpanded={toggleTAExpanded}
     />

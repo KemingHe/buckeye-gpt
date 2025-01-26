@@ -11,7 +11,10 @@ export default function ChatDisclaimer(): JSX.Element {
         Legal Disclaimer
       </h2>
       <p className="text-xs text-center leading-snug">
-        Buckeye GPT uses AI. Read our&nbsp;
+        <span className="sr-only">
+          Buckeye GPT uses AI. Read our legal disclaimer.
+        </span>
+        <span aria-hidden="true">Buckeye GPT uses AI. Read our&nbsp;</span>
         <Link
           href={LEGAL_DISCLAIMER_LINK}
           className="link"
@@ -22,7 +25,7 @@ export default function ChatDisclaimer(): JSX.Element {
         >
           Disclaimer
         </Link>
-        .
+        <span aria-hidden="true">.</span>
       </p>
     </section>
   );

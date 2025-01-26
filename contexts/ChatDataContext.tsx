@@ -10,9 +10,12 @@ import {
   type FormEvent,
   type JSX,
   type ReactNode,
+  type RefObject,
   createContext,
   useCallback,
   useContext,
+  useEffect,
+  useRef,
 } from 'react';
 
 import {
@@ -33,6 +36,7 @@ export interface ChatDataContextValue {
   error             : Error | undefined;
   messages          : Message[];
   inputValue        : string;
+  inputRef          : RefObject<HTMLTextAreaElement>;
   // Chat actions.
   clearMessages     : () => void;
   setInputValue     : (value: string) => void;
@@ -48,6 +52,8 @@ export function ChatDataProvider({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   const clientUser: CurrentUser | CurrentInternalUser | null = useUser();
+  const inputRef: RefObject<HTMLTextAreaElement> =
+    useRef<HTMLTextAreaElement>(null);
   const {
     isLoading,
     error,
@@ -65,8 +71,15 @@ export function ChatDataProvider({
     onError: (e) => console.error(e),
   });
 
+  // Auto re-focus on input textarea when loading is done.
+  useEffect(() => {
+    if (!isLoading) inputRef.current?.focus();
+  }, [isLoading]);
+
+  // Auto-refocus on input textarea when messages have been cleared.
   const clearMessages = useCallback(() => {
     setMessages([]);
+    inputRef.current?.focus();
   }, []);
 
   // No need to memoize because:
@@ -78,6 +91,7 @@ export function ChatDataProvider({
     error,
     messages,
     inputValue: input,
+    inputRef,
     clearMessages,
     setInputValue: setInput,
     handleSubmit,

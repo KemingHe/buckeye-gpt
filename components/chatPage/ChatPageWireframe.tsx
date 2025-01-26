@@ -2,6 +2,7 @@ import type { JSX, ReactNode } from 'react';
 
 // biome-ignore format: added alignment for clarity.
 export interface ChatPageWireframeProps {
+  appRootId       : string;
   isSideDrawerOpen: boolean;
   navbar          : ReactNode;
   children        : ReactNode;
@@ -9,13 +10,14 @@ export interface ChatPageWireframeProps {
 }
 
 export function ChatPageWireframe({
+  appRootId,
   isSideDrawerOpen,
   navbar,
   children,
   sideDrawer,
 }: ChatPageWireframeProps): JSX.Element {
   return (
-    <main className="drawer lg:drawer-open h-full">
+    <main id={appRootId} className="drawer lg:drawer-open h-full">
       {/* Input checkbox to support DaisyUI's media query of drawer open/close state. */}
       <input
         className="drawer-toggle"
