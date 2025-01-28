@@ -1,10 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
-# Skip commitizen if commit author is GitHub Actions bot.
-if [ "$(git config --get user.name)" == "github-actions[bot]" ]; then
-    echo "🤖 GitHub Actions bot detected, skipping commitizen."
-    exit 0
-fi
-
-# For all other commits: try commitizen with fallback.
+# Use commitizen with conventional-changelog, 
+# fallback to default editor if not available.
 exec < /dev/tty && pnpm cz --hook || true
