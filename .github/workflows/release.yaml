@@ -13,6 +13,9 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
+    env:
+      # Disable Husky hooks during CI.
+      HUSKY: 0
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
