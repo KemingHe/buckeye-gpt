@@ -13,6 +13,13 @@ jobs:
     permissions:
       contents: read
     steps:
+      - name: Debug
+        run: |
+          echo "CI=$CI"
+          echo "GITHUB_ACTIONS=$GITHUB_ACTIONS"
+          echo "NODE_ENV=$NODE_ENV"
+          echo "CI_COMMIT_REF_NAME=$CI_COMMIT_REF_NAME"
+          
       - name: Checkout code
         uses: actions/checkout@v4
         with:
