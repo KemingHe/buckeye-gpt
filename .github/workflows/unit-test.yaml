@@ -1,4 +1,4 @@
-name: Unit Test
+name: Vitest
 
 on:
   push:
@@ -55,12 +55,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: CI lint
-        run: pnpm lint
-
-      - name: Test build
-        run: pnpm build
 
       - name: Unit test
         run: pnpm test:unit:coverage
