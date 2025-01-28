@@ -1,4 +1,4 @@
-name: E2E Test
+name: Playwright
 
 on:
   push:
@@ -67,7 +67,7 @@ jobs:
           path: ${{ env.PLAYWRIGHT_DEPS_PATH }}
           key: ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.PLAYWRIGHT_VERSION }}
 
-      - name: Install Playwrigtht dependencies with cache
+      - name: Install Playwrigtht dependencies with cache on cache miss
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: pnpm test:e2e:install
 

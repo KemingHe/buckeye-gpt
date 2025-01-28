@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# Step 1. Allow terminal input for commitizen prompts.
-exec < /dev/tty
+# Skip commitizen if commit author is GitHub Actions bot.
+if git config --get user.name | grep -q "github-actions[bot]"; then
+    echo "🤖 GitHub Actions bot detected, skipping commitizen."
+    exit 0
+fi
 
-# Step 2. Run commitizen to format commit messages, 
-# fallback to skipping with success if it fails
-pnpm cz --hook || true
+# For all other commits: try commitizen with fallback.
+exec < /dev/tty && pnpm cz --hook || true
