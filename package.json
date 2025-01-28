@@ -28,7 +28,7 @@
     "email": "keminghe.career@gmail.com"
   },
   "scripts": {
-    "prepare": "husky || true",
+    "prepare": "husky",
     "lint": "biome ci .",
     "lint:fix": "biome check --write .",
     "build": "next build",

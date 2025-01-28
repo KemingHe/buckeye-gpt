@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Skip pre-commit checks if commit author is GitHub Actions bot.
-if git config --get user.name | grep -q "github-actions[bot]"; then
-    echo "🤖 GitHub Actions bot detected, skipping verification."
+if [ "$(git config --get user.name)" == "github-actions[bot]" ]; then
+    echo "🤖 GitHub Actions bot detected, skipping commitizen."
     exit 0
 fi
 
