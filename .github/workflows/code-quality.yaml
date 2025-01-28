@@ -29,24 +29,6 @@ jobs:
           node-version-file: .nvmrc
           cache: 'pnpm'
 
-      - name: Debug Environment Variables
-        run: |
-          echo "Values:"
-          echo "CI=$CI"
-          echo "GITHUB_ACTIONS=$GITHUB_ACTIONS"
-          echo "NODE_ENV=$NODE_ENV"
-          
-          echo -e "\nTypes:"
-          node -e "console.log('typeof CI:', typeof process.env.CI)"
-          node -e "console.log('typeof GITHUB_ACTIONS:', typeof process.env.GITHUB_ACTIONS)"
-          node -e "console.log('typeof NODE_ENV:', typeof process.env.NODE_ENV)"
-          
-          echo -e "\nEquality Checks:"
-          node -e "console.log('CI === true:', process.env.CI === true)"
-          node -e "console.log('CI === \"true\":', process.env.CI === 'true')"
-          node -e "console.log('GITHUB_ACTIONS === true:', process.env.GITHUB_ACTIONS === true)"
-          node -e "console.log('GITHUB_ACTIONS === \"true\":', process.env.GITHUB_ACTIONS === 'true')"
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 

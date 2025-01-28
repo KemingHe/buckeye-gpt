@@ -1,18 +1,13 @@
-// Skip husky installation on CI.
+// Skip husky installation in prod env and CI.
 // https://typicode.github.io/husky/how-to.html#ci-server-and-docker
-if (
-  process.env.NODE_ENV === 'production' ||
-  process.env.CI ||
-  process.env.CI === 'true' ||
-  process.env.GITHUB_ACTIONS ||
-  process.env.GITHUB_ACTIONS === 'true'
-) {
-  console.log('CI environment detected:', {
-    NODE_ENV: process.env.NODE_ENV,
-    CI: process.env.CI,
-    GITHUB_ACTIONS: process.env.GITHUB_ACTIONS,
-  });
-  console.log('Husky installation skipped.');
+if (process.env.NODE_ENV === 'production') {
+  console.log('Prodoction env detected, Husky installation skipped.');
+  process.exit(0);
+}
+
+// NOTE: GitHub Actions set CI and GITHUB_ACTIONS to string 'true'.
+if (process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true') {
+  console.log('CI env detected, Husky installation skipped.');
   process.exit(0);
 }
 
