@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Skip commitizen if commit author is GitHub Actions bot.
-if git config --get user.name | grep -q "github-actions[bot]"; then
+if [ "$(git config --get user.name)" == "github-actions[bot]" ]; then
     echo "🤖 GitHub Actions bot detected, skipping commitizen."
     exit 0
 fi
