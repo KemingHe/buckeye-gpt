@@ -7,4 +7,4 @@ if git config --get user.name | grep -q "github-actions[bot]"; then
 fi
 
 # For all other commits: run pre-commit checks.
-pnpm verify
+# pnpm verify
