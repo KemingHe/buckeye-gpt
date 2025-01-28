@@ -39,8 +39,9 @@
     "test:e2e": "playwright test",
     "test:e2e:update-snapshots": "playwright test --update-snapshots",
     "test": "pnpm test:unit:coverage && pnpm test:e2e",
-    "verify": "pnpm lint && pnpm test && pnpm scan:secrets",
+    "verify": "pnpm check:changesets && pnpm lint && pnpm test && pnpm scan:secrets",
     "dev": "next dev --turbopack",
+    "check:changesets": "changeset status",
     "check:favicon": "realfavicon check -s cli 3000",
     "scan:secrets": "ggshield secret scan repo .",
     "start": "next start"
@@ -77,8 +78,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@changesets/cli": "^2.27.12",
     "@playwright/test": "^1.50.0",
-    "@release-it/conventional-changelog": "^9.0.4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
@@ -99,7 +100,6 @@
     "jsdom": "^25.0.1",
     "postcss": "^8.5.1",
     "realfavicon": "^0.4.12",
-    "release-it": "^18.1.2",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
     "vite-tsconfig-paths": "^5.1.4",
