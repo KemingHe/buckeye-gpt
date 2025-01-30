@@ -1,9 +1,9 @@
-import type { Message } from '@ai-sdk/ui-utils';
 import {
   type CurrentInternalUser,
   type CurrentUser,
   useUser,
 } from '@stackframe/stack';
+import { type Message, type UseChatHelpers, useChat } from 'ai/react';
 import {
   type ChangeEvent,
   type Context,
@@ -26,8 +26,6 @@ import {
   // LANGCHAIN_ANTHROPIC_CLAUDE_LITE_API_ENDPOINT,
   // LANGCHAIN_ANTHROPIC_CLAUDE_REGULAR_API_ENDPOINT,
 } from '@/constants/apiEndpointConstants';
-import type { UseChatHelpers } from '@/hooks/useChat/UseChatHelpers';
-import { useChat } from '@/hooks/useChat/useChat';
 
 // biome-ignore format: added alignment for clarity.
 export interface ChatDataContextValue {
