@@ -1,4 +1,4 @@
-import type { Message } from '@ai-sdk/ui-utils';
+import type { Message } from 'ai/react';
 import type { JSX, RefObject } from 'react';
 
 import { MemoizedChatBubble } from '@/components/chatMessages/ChatBubble';
