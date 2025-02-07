@@ -1,7 +1,7 @@
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 import type { JSX, RefObject } from 'react';
 
-import GitHubCorner from '@/components/githubCorner/GitHubCorner';
+import { GitHubCorner } from '@/components/GitHubCorner';
 
 // biome-ignore format: added alignment for clarity.
 export interface ChatSideDrawerWireframeProps {

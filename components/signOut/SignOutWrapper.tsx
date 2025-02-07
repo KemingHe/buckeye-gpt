@@ -7,7 +7,7 @@ import type { JSX } from 'react';
 import { toast } from 'react-toastify';
 
 import { SignOutWireframe } from '@/components/signOut/SignOutWireframe';
-import { type UseLoadingReturnProps, useLoading } from '@/hooks/useLoading';
+import { type UseLoadingReturnProps, useLoading } from '@/hooks/use-loading';
 
 export default function SignOutWrapper(): JSX.Element {
   const { isLoading, startLoading, stopLoading }: UseLoadingReturnProps =

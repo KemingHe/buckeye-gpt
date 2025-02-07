@@ -1,118 +1,19 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { StackProvider } from '@stackframe/stack';
-import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import type { JSX, ReactNode } from 'react';
 import { ToastContainer } from 'react-toastify';
 
-import { PRODUCTION_DOMAIN } from '@/constants/domainConstants';
 import { MEASUREMENT_ID } from '@/constants/googleConstants';
-import {
-  SOCIALIFY_PREVIEW_IMAGE_ALT,
-  SOCIALIFY_PREVIEW_IMAGE_HEIGHT,
-  SOCIALIFY_PREVIEW_IMAGE_URL,
-  SOCIALIFY_PREVIEW_IMAGE_WIDTH,
-} from '@/constants/styleConstants';
-import { COLOR_PRIMARY } from '@/constants/styleConstants';
 import stackServerApp from '@/lib/stackAuth/server/stackServerApp';
-import packageDotJson from '@/package.json';
 
 import './globals.css';
 
-// -----------------------------------------------------------------------------
-// Text metadata, defined according to the NextJS metadata interface.
-export const metadata: Metadata = {
-  title: 'Buckeye GPT',
-  description:
-    'Multi-modal ChatGPT clone with RAG built free for students at the Ohio State University.',
-  generator: 'Next.js',
-  applicationName: 'Buckeye GPT',
-  // Sends the full URL as the referrer for same-origin requests, only the
-  // origin for cross-origin requests to the same or higher security level,
-  // and no referrer for cross-origin requests to less secure origins.
-  // This provides a good balance of privacy and functionality.
-  referrer: 'strict-origin-when-cross-origin',
-  keywords: ['Langchain', 'OpenAI', 'Gemini', 'Ohio State', 'Buckeyes'],
-  authors: [{ name: 'Keming He', url: 'https://linkedin.com/in/keminghe' }],
-  creator: 'Keming He',
-  publisher: 'Keming He',
-  // formatDetection: {
-  //   email: false,
-  //   address: false,
-  //   telephone: false,
-  // },
-  // metadataBase: new URL(PRODUCTION_DOMAIN),
-  openGraph: {
-    title: 'Buckeye GPT',
-    description:
-      'Multi-modal ChatGPT clone with RAG built free for students at the Ohio State University.',
-    url: PRODUCTION_DOMAIN,
-    siteName: 'Buckeye GPT',
-    images: [
-      {
-        url: SOCIALIFY_PREVIEW_IMAGE_URL,
-        width: SOCIALIFY_PREVIEW_IMAGE_WIDTH,
-        height: SOCIALIFY_PREVIEW_IMAGE_HEIGHT,
-        alt: SOCIALIFY_PREVIEW_IMAGE_ALT,
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Buckeye GPT',
-    description:
-      'Multi-modal ChatGPT clone with RAG built free for students at the Ohio State University.',
-    site: '@Keming_He',
-    creator: '@Keming_He',
-    images: [
-      {
-        url: SOCIALIFY_PREVIEW_IMAGE_URL,
-        width: SOCIALIFY_PREVIEW_IMAGE_WIDTH,
-        height: SOCIALIFY_PREVIEW_IMAGE_HEIGHT,
-        alt: SOCIALIFY_PREVIEW_IMAGE_ALT,
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    // "max-snippet": -1,
-    // "max-video-preview": -1,
-    // "max-image-preview": "large"
-  },
-  appleWebApp: {
-    title: 'BuckeyeGPT',
-    // statusBarStyle: "black-translucent",
-    // startupImage: [{ url: "...", media: "(...)"}],
-  },
-  category: 'technology',
-  other: {
-    version: packageDotJson.version,
-  },
-};
+export { metadata } from '@/app-config/metadata';
+export { viewport } from '@/app-config/viewport';
 
-// -----------------------------------------------------------------------------
-// Theme color metadata, defined separately through the NextJS viewport interface.
-export const viewport: Viewport = {
-  themeColor: COLOR_PRIMARY,
-  // width: 'device-width',
-  // initialScale: 1,
-  // maximumScale: 1,
-  // userScalable: false,
-  colorScheme: 'dark',
-  // viewportFit: 'cover',
-};
+const inter = Inter({ subsets: ['latin'] });
 
-// -----------------------------------------------------------------------------
-// Explicitly define the Inter font subset to use for the entire application
-// for UI consistency and performance.
-const inter = Inter({
-  subsets: ['latin'],
-});
-
-// -----------------------------------------------------------------------------
 export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {

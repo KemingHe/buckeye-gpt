@@ -10,11 +10,11 @@ import { type JSX, type ReactNode, useEffect } from 'react';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
 import FatalError from '@/components/error/FatalError';
 import { AUTH_SIGN_IN_ROUTE } from '@/constants/routeConstants';
-import withCenteredWrapper from '@/hocs/withCenteredWrapper';
+import { withCenteredWrapper } from '@/hocs/withCenteredWrapper';
 import {
   type RouterResources,
   useRouterResources,
-} from '@/hooks/useRouterResources';
+} from '@/hooks/use-router-resources';
 
 export default function RequiresSignedInGuard({
   children,
