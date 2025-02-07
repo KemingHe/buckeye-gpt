@@ -1,5 +1,15 @@
 # buckeye-gpt
 
+## 0.15.0
+
+### Minor Changes
+
+- [#121](https://github.com/KemingHe/buckeye-gpt/pull/121) [`9edd433`](https://github.com/KemingHe/buckeye-gpt/commit/9edd43342a0d7eba800cd5bc06ed2e85370576ef) Thanks [@KemingHe](https://github.com/KemingHe)! - Added welcome section (proof-of-concept, pending refactor) to suggest prompts to the user.
+
+### Patch Changes
+
+- [#121](https://github.com/KemingHe/buckeye-gpt/pull/121) [`9edd433`](https://github.com/KemingHe/buckeye-gpt/commit/9edd43342a0d7eba800cd5bc06ed2e85370576ef) Thanks [@KemingHe](https://github.com/KemingHe)! - Refactored GitHubCorner component using React best practice. Will soon refactor rest and added unittest.
+
 ## 0.14.1
 
 ### Patch Changes
