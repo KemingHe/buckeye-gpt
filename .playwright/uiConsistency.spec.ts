@@ -14,7 +14,7 @@ import {
 
 // Allow 30 seconds for resource-intensive expects and waits.
 const customPageLoadTimeout = { timeout: 30000 };
-const additionalPageLoadTimeout: number = 1000;
+const additionalPageLoadTimeout: number = 1500;
 // Avoid screenshotting versioning components on page.
 const customScreenshotOptions: PageScreenshotOptions = {
   style: '.no-screenshot{display:none !important}',

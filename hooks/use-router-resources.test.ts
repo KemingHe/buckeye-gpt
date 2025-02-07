@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { Mock } from 'vitest';
 
-import { useRouterResources } from '@/hooks/useRouterResources';
+import { useRouterResources } from '@/hooks/use-router-resources';
 
 // IMPORTANT: Must first mock into vi.fn() before modding the return value.
 vi.mock('next/navigation', () => ({

@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import type { JSX } from 'react';
+import type { FC } from 'react';
 
-import styles from '@/components/githubCorner/GitHubCorner.module.css';
 import { GITHUB_REPO_LINK } from '@/constants/externalLinkConstants';
+import styles from './styles.module.css';
 
-export default function GitHubCorner(): JSX.Element {
+export const GitHubCorner: FC = () => {
   return (
     <Link
       href={GITHUB_REPO_LINK}
@@ -35,4 +35,4 @@ export default function GitHubCorner(): JSX.Element {
       </svg>
     </Link>
   );
-}
+};

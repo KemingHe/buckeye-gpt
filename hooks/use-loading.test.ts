@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { useLoading } from '@/hooks/useLoading';
+import { useLoading } from '@/hooks/use-loading';
 
 describe('The useLoading custom react hook', () => {
   it('mounts with the correct initial state, defaults to false', () => {

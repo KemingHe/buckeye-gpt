@@ -1,3 +1,23 @@
+# Failed Attempt at Unit Testing `StackServerApp` Instance
+
+Updated: February 6, 2025
+
+`StackServerApp` becomes un-test-able outside of NextJS runtime after upgrading to 2.7.12.
+
+## Vitest Error Message
+
+```TXT
+FAIL
+lib/stackAuth/server/stackServerApp.test.ts 
+[ lib/stackAuth/server/stackServerApp.test.ts ]
+
+Error: 
+Cannot find module '/.../buckeye-gpt/node_modules/.pnpm/@stackframe+stack-shared@2.7.12_@types+react-dom@18.3.5_@types+react@18.3.18__@types+react@18_jp5v22pybxzihqwitug6g63uo4/node_modules/@stackframe/stack-shared/dist/utils/globals' imported from /.../buckeye-gpt/node_modules/.pnpm/@stackframe+stack-shared@2.7.12_@types+react-dom@18.3.5_@types+react@18.3.18__@types+react@18_jp5v22pybxzihqwitug6g63uo4/node_modules/@stackframe/stack-shared/dist/utils/errors.js
+```
+
+## Unit Test File
+
+```Typescript
 import stackServerApp from '@/lib/stackAuth/server/stackServerApp';
 
 vi.mock('server-only', () => {
@@ -25,3 +45,4 @@ describe('stackServerApp instance', () => {
     expect(stackServerApp.urls.magicLinkCallback).toBe('/verify-email-route');
   });
 });
+```

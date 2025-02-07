@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`withCenteredWrapper HOC > matches the latest snapshot 1`] = `
+<div>
+  <main
+    class="flex flex-col items-center justify-center w-full h-full"
+  >
+    <div
+      class="test-class"
+    >
+      Test Component 
+      test value
+    </div>
+  </main>
+</div>
+`;

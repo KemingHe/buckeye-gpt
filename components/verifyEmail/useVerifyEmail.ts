@@ -8,11 +8,11 @@ import {
 import { useCallback, useEffect, useState } from 'react';
 
 import { AUTH_VERIFY_EMAIL_ROUTE } from '@/constants/routeConstants';
-import { type UseLoadingReturnProps, useLoading } from '@/hooks/useLoading';
+import { type UseLoadingReturnProps, useLoading } from '@/hooks/use-loading';
 import {
   type RouterResources,
   useRouterResources,
-} from '@/hooks/useRouterResources';
+} from '@/hooks/use-router-resources';
 
 export interface UseVerifyEmailReturnProps {
   isLoading: boolean;
