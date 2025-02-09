@@ -1,5 +1,5 @@
 'use client';
 
-import SignOutWrapper from '@/components/signOut/SignOutWrapper';
+import { SignOut } from '@/components/auth-sign-out';
 
-export default SignOutWrapper;
+export default SignOut;

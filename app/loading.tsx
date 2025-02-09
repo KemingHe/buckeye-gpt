@@ -1,5 +1,5 @@
-import { LoadingSpinner } from '@/components/LoadingSpinner';
-import { withCenteredWrapper } from '@/hocs/withCenteredWrapper';
+import { LoadingSpinner } from '@/components/loading';
+import { withCenteredWrapper } from '@/hocs/with-centered-wrapper';
 
 export default withCenteredWrapper(LoadingSpinner);
 

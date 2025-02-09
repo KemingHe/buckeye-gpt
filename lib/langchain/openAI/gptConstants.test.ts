@@ -1,5 +1,5 @@
 import * as gptConstants from '@/lib/langchain/openAI/gptConstants';
-import isNonEmptyString from '@/utils/isNonEmptyString';
+import { isNonEmptyString } from '@/utils/is-non-empty-string';
 
 // IMPORTANT: NEVER snapshot secrets or sensitive information.
 

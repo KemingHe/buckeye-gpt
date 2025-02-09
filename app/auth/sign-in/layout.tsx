@@ -1,11 +1,12 @@
 'use client';
 
-import type { JSX, ReactNode } from 'react';
+import type { JSX } from 'react';
 
-import RedirectOnceSignedInGuard from '@/guards/RedirectOnceSignedInGuard';
+import { RedirectOnceSignedInGuard } from '@/guards/redirect-once-signed-in';
+import type { LayoutProps } from '@/types/app-layout-props';
 
-export default function SignInLayout({
-  children,
-}: Readonly<{ children: ReactNode }>): JSX.Element {
+const Layout = ({ children }: LayoutProps): JSX.Element => {
   return <RedirectOnceSignedInGuard>{children}</RedirectOnceSignedInGuard>;
-}
+};
+
+export default Layout;

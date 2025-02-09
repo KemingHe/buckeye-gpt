@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
-import { PRODUCTION_DOMAIN } from '@/constants/domainConstants';
 import {
   SOCIALIFY_PREVIEW_IMAGE_ALT,
   SOCIALIFY_PREVIEW_IMAGE_HEIGHT,
   SOCIALIFY_PREVIEW_IMAGE_URL,
   SOCIALIFY_PREVIEW_IMAGE_WIDTH,
-} from '@/constants/styleConstants';
+} from '@/constants/app-config';
+import { PRODUCTION_DOMAIN } from '@/constants/domains';
 import { getVersion } from '@/utils/package';
 
 export const metadata: Metadata = {

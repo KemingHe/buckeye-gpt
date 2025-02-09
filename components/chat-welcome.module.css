@@ -1,0 +1,25 @@
+/* Logo animation keyframes
+ * - 0-80%: Logo stays still (4 seconds)
+ * - 80-100%: Logo spins once vertically (1 second)
+ * Total cycle: 5 seconds
+ */
+@keyframes logoSpin {
+  0%,
+  80% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Logo animation properties
+ * animate-[]: Applies animation with name, duration, timing function, and iteration
+ * transform-style: Enables 3D space for rotation
+ * will-change: Optimizes browser performance for transform changes
+ */
+.welcome-logo {
+  @apply animate-[logoSpin_5s_ease-in-out_infinite];
+  transform-style: preserve-3d;
+  will-change: transform;
+}

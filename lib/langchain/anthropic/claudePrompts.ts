@@ -6,7 +6,7 @@ import {
   ANTHROPIC_CLAUDE_REGULAR_MODEL_ID,
 } from '@/lib/langchain/anthropic/claudeConstants';
 import { createPrompt } from '@/lib/langchain/utils/createPrompt';
-import { AI_PROVIDER_ENUM } from '@/schemas/AIProviderSchema';
+import { AI_PROVIDER_ENUM } from '@/zod-schemas/ai-provider';
 
 export const claudeLitePrompt: ChatPromptTemplate = createPrompt({
   aiProvider: AI_PROVIDER_ENUM.ANTHROPIC,

@@ -6,7 +6,7 @@ import {
   OPENAI_GPT_REGULAR_MODEL_ID,
 } from '@/lib/langchain/openAI/gptConstants';
 import { createPrompt } from '@/lib/langchain/utils/createPrompt';
-import { AI_PROVIDER_ENUM } from '@/schemas/AIProviderSchema';
+import { AI_PROVIDER_ENUM } from '@/zod-schemas/ai-provider';
 
 export const gptLitePrompt: ChatPromptTemplate = createPrompt({
   aiProvider: AI_PROVIDER_ENUM.OPENAI,

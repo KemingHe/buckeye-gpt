@@ -1,5 +1,5 @@
 import * as geminiConstants from '@/lib/langchain/google/geminiConstants';
-import isNonEmptyString from '@/utils/isNonEmptyString';
+import { isNonEmptyString } from '@/utils/is-non-empty-string';
 
 // IMPORTANT: NEVER snapshot secrets or sensitive information.
 

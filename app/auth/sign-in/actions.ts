@@ -1,16 +1,16 @@
 'use server';
 
+import { AUTH_VERIFY_EMAIL_ROUTE } from '@/constants/routes';
+import { stackServerApp } from '@/lib/stack-auth/server/app';
+import { getCallbackUrl } from '@/utils/get-callback-url';
 import {
   type SignInFormFields,
   SignInFormFieldsSchema,
-} from '@/components/signIn/SignInFormFieldsSchema';
-import { AUTH_VERIFY_EMAIL_ROUTE } from '@/constants/routeConstants';
-import stackServerApp from '@/lib/stackAuth/server/stackServerApp';
-import getCallbackUrl from '@/utils/getCallbackUrl';
+} from '@/zod-schemas/sign-in-form-fields';
 
-export async function signInServerAction(
+export const signInServerAction = async (
   data: SignInFormFields,
-): Promise<void> {
+): Promise<void> => {
   // Server-side re-validation and destructing of the form fields.
   SignInFormFieldsSchema.parse(data);
   const { nameDotNumber }: SignInFormFields = data;
@@ -18,4 +18,4 @@ export async function signInServerAction(
   await stackServerApp.sendMagicLinkEmail(`${nameDotNumber}@osu.edu`, {
     callbackUrl: getCallbackUrl(AUTH_VERIFY_EMAIL_ROUTE),
   });
-}
+};

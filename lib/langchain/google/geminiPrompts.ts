@@ -6,7 +6,7 @@ import {
   GOOGLE_GEMINI_REGULAR_MODEL_ID,
 } from '@/lib/langchain/google/geminiConstants';
 import { createPrompt } from '@/lib/langchain/utils/createPrompt';
-import { AI_PROVIDER_ENUM } from '@/schemas/AIProviderSchema';
+import { AI_PROVIDER_ENUM } from '@/zod-schemas/ai-provider';
 
 export const geminiLitePrompt: ChatPromptTemplate = createPrompt({
   aiProvider: AI_PROVIDER_ENUM.GOOGLE,
