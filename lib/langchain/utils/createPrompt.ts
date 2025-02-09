@@ -1,6 +1,6 @@
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 
-import type { AIProvider } from '@/schemas/AIProviderSchema';
+import type { AIProvider } from '@/zod-schemas/ai-provider';
 
 // biome-ignore format: added alignment for clarity.
 export interface CreatePromptProps {

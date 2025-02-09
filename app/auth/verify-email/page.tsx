@@ -1,5 +1,5 @@
 'use client';
 
-import VerifyEmailWrapper from '@/components/verifyEmail/VerifyEmailWrapper';
+import { VerifyEmail } from '@/components/auth-verify-email';
 
-export default VerifyEmailWrapper;
+export default VerifyEmail;

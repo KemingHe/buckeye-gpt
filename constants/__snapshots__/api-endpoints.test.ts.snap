@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`API endpoints > matches the latest snapshot 1`] = `
+{
+  "LANGCHAIN_ANTHROPIC_CLAUDE_LITE_API_ENDPOINT": "/api/langchain/claude/lite",
+  "LANGCHAIN_ANTHROPIC_CLAUDE_PREMIUM_API_ENDPOINT": "/api/langchain/claude/premium",
+  "LANGCHAIN_ANTHROPIC_CLAUDE_REGULAR_API_ENDPOINT": "/api/langchain/claude/regular",
+  "LANGCHAIN_GOOGLE_GEMINI_LITE_API_ENDPOINT": "/api/langchain/gemini/lite",
+  "LANGCHAIN_GOOGLE_GEMINI_PREMIUM_API_ENDPOINT": "/api/langchain/gemini/premium",
+  "LANGCHAIN_GOOGLE_GEMINI_REGULAR_API_ENDPOINT": "/api/langchain/gemini/regular",
+  "LANGCHAIN_OPENAI_LITE_API_ENDPOINT": "/api/langchain/openai/lite",
+  "LANGCHAIN_OPENAI_PREMIUM_API_ENDPOINT": "/api/langchain/openai/premium",
+  "LANGCHAIN_OPENAI_REGULAR_API_ENDPOINT": "/api/langchain/openai/regular",
+}
+`;

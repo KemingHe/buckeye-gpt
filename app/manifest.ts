@@ -1,8 +1,8 @@
 import type { MetadataRoute } from 'next';
 
-import { COLOR_PRIMARY } from '@/constants/styleConstants';
+import { COLOR_PRIMARY } from '@/constants/app-config';
 
-export default function manifest(): MetadataRoute.Manifest {
+const manifest = (): MetadataRoute.Manifest => {
   return {
     name: 'Buckeye GPT',
     short_name: 'BuckeyeGPT',
@@ -27,4 +27,6 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: COLOR_PRIMARY,
     display: 'standalone',
   };
-}
+};
+
+export default manifest;

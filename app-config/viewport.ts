@@ -1,6 +1,6 @@
 import type { Viewport } from 'next';
 
-import { COLOR_PRIMARY } from '@/constants/styleConstants';
+import { COLOR_PRIMARY } from '@/constants/app-config';
 
 export const viewport: Viewport = {
   themeColor: COLOR_PRIMARY,

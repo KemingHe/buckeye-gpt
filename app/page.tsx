@@ -2,19 +2,21 @@
 
 import type { JSX } from 'react';
 
-import ChatPageWrapper from '@/components/chatPage/ChatPageWrapper';
-import { ChatConfigProvider } from '@/contexts/ChatConfigContext';
-import { ChatDataProvider } from '@/contexts/ChatDataContext';
-import { ChatLayoutProvider } from '@/contexts/ChatLayoutContext';
+import { ChatPage } from '@/components/chat-page';
+import { ChatConfigProvider } from '@/contexts/chat-config';
+import { ChatDataProvider } from '@/contexts/chat-data';
+import { ChatLayoutProvider } from '@/contexts/chat-layout';
 
-export default function Homepage(): JSX.Element {
+const Page = (): JSX.Element => {
   return (
     <ChatLayoutProvider>
       <ChatConfigProvider>
         <ChatDataProvider>
-          <ChatPageWrapper />
+          <ChatPage />
         </ChatDataProvider>
       </ChatConfigProvider>
     </ChatLayoutProvider>
   );
-}
+};
+
+export default Page;

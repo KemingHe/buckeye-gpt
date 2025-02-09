@@ -10,7 +10,7 @@ import {
   AUTH_SIGN_IN_ROUTE,
   AUTH_VERIFY_EMAIL_ROUTE,
   HOME_ROUTE,
-} from '../constants/routeConstants';
+} from '../constants/routes';
 
 // Allow 30 seconds for resource-intensive expects and waits.
 const customPageLoadTimeout = { timeout: 30000 };

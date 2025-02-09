@@ -1,13 +1,8 @@
 import { useEffect, useState } from 'react';
 
-// biome-ignore format: added alignment for clarity.
-export interface UseLoadingReturnProps {
-  isLoading   : boolean;
-  startLoading: () => void;
-  stopLoading : () => void;
-}
+import type { LoadingControls } from '@/types/loading-props';
 
-export function useLoading(initialState = false): UseLoadingReturnProps {
+export const useLoading = (initialState = false): LoadingControls => {
   const [isLoading, setIsLoading] = useState<boolean>(initialState);
 
   // Clean up the loading state (set to false) when the component unmounts.
@@ -30,4 +25,4 @@ export function useLoading(initialState = false): UseLoadingReturnProps {
     startLoading,
     stopLoading,
   };
-}
+};

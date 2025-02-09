@@ -2,15 +2,14 @@
 
 import { gptRegularChain } from '@/lib/langchain/openAI/gptChains';
 import { handleChatRequest } from '@/lib/langchain/utils/handleRequest';
-import isAuthedWithRole from '@/lib/stackAuth/server/isAuthedWithRole';
-import isValidOrigin from '@/utils/isValidOrigin';
+import { isAuthedWithRole } from '@/lib/stack-auth/server/is-authed-with-role';
 
 // Disabled caching for endpoint.
 export const dynamic = 'force-dynamic';
 
-export async function POST(request: Request): Promise<Response> {
-  const origin: string | null = request.headers.get('origin');
-  if (!isValidOrigin(origin) || !(await isAuthedWithRole(null))) {
+export const POST = async (request: Request): Promise<Response> => {
+  const isAuthorized: boolean = await isAuthedWithRole(null);
+  if (!isAuthorized) {
     return new Response('Forbidden', { status: 403 });
   }
 
@@ -20,4 +19,4 @@ export async function POST(request: Request): Promise<Response> {
     console.error(error);
     return new Response('Internal server error', { status: 500 });
   }
-}
+};

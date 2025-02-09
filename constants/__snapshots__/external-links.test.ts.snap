@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`external links > matches the latest snapshot 1`] = `
+{
+  "DEVELOPER_GITHUB_LINK": "https://github.com/KemingHe",
+  "DEVELOPER_LINKEDIN_LINK": "https://www.linkedin.com/in/keminghe",
+  "GITHUB_REPO_LINK": "https://github.com/KemingHe/buckeye-gpt",
+  "LEGAL_DISCLAIMER_LINK": "https://github.com/KemingHe/buckeye-gpt/blob/main/docs/legal/legal-disclaimer.md",
+  "PRIVACY_POLICY_LINK": "https://github.com/KemingHe/buckeye-gpt/blob/main/docs/legal/privacy-policy.md",
+  "TERMS_AND_CONDITIONS_LINK": "https://github.com/KemingHe/buckeye-gpt/blob/main/docs/legal/terms-and-conditions.md",
+}
+`;
