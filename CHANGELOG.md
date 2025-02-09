@@ -1,5 +1,11 @@
 # buckeye-gpt
 
+## 0.15.1
+
+### Patch Changes
+
+- [#124](https://github.com/KemingHe/buckeye-gpt/pull/124) [`da35dde`](https://github.com/KemingHe/buckeye-gpt/commit/da35dde9d1fea43a0db8ecd80f89e7c05470dd5c) Thanks [@KemingHe](https://github.com/KemingHe)! - Refactored entire code base; applied strict flat file structure for components; modularized intefaces and strongly typed all exports; updated deps and removed unused endpoints and functions.
+
 ## 0.15.0
 
 ### Minor Changes
