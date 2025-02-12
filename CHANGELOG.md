@@ -1,5 +1,19 @@
 # buckeye-gpt
 
+## 0.16.0
+
+### Minor Changes
+
+- [#129](https://github.com/KemingHe/buckeye-gpt/pull/129) [`af7e3fd`](https://github.com/KemingHe/buckeye-gpt/commit/af7e3fd8c603ee277a16631f91512b2c09645690) Thanks [@KemingHe](https://github.com/KemingHe)! - Added LangSmith tracing for all LangChain OpenAI calls. Found bug where LangSmith project is correctly set in app but not recognized in the SaaS; current workaround is to use the auto-default project.
+
+### Patch Changes
+
+- [#129](https://github.com/KemingHe/buckeye-gpt/pull/129) [`af7e3fd`](https://github.com/KemingHe/buckeye-gpt/commit/af7e3fd8c603ee277a16631f91512b2c09645690) Thanks [@KemingHe](https://github.com/KemingHe)! - Added gap between clear messages modal form buttons. Fixed issue to allow auto-focus on textarea after clearing messages.
+
+- [#129](https://github.com/KemingHe/buckeye-gpt/pull/129) [`86dee35`](https://github.com/KemingHe/buckeye-gpt/commit/86dee35e40d863a4239509eda14ec02ce593fc94) Thanks [@KemingHe](https://github.com/KemingHe)! - Fixed Vercel build issue where sign in form fields schema is wrongfully deemed excessively deep, by @ts-ignore the line.
+
+- [#129](https://github.com/KemingHe/buckeye-gpt/pull/129) [`af7e3fd`](https://github.com/KemingHe/buckeye-gpt/commit/af7e3fd8c603ee277a16631f91512b2c09645690) Thanks [@KemingHe](https://github.com/KemingHe)! - Added unittest for sign-in-form-fields zod schema.
+
 ## 0.15.1
 
 ### Patch Changes
