@@ -20,6 +20,7 @@ export const SignIn = ({ signInServerAction }: SignInProps): JSX.Element => {
     setFocus,
   } = useForm<SignInFormFields>({
     criteriaMode: 'all',
+    // @ts-ignore: Sign in form schema includes name.# schema, which next build will think is exessively deep.
     resolver: zodResolver(SignInFormFieldsSchema),
   });
   // Handler-level state and methods.
