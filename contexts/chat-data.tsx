@@ -49,7 +49,6 @@ export const ChatDataProvider = ({
   // Auto-refocus on input textarea when messages have been cleared.
   const clearMessages = useCallback(() => {
     setMessages([]);
-    inputRef.current?.focus();
   }, []);
 
   // No need to memoize because:

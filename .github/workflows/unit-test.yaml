@@ -21,6 +21,12 @@ jobs:
       NEXT_PUBLIC_STACK_PROJECT_ID               : ${{ secrets.NEXT_PUBLIC_STACK_PROJECT_ID }}
       NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY   : ${{ secrets.NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY }}
       STACK_SECRET_SERVER_KEY                    : ${{ secrets.STACK_SECRET_SERVER_KEY }}
+      # LangChain credentials.
+      LANGSMITH_TRACING                          : ${{ secrets.LANGSMITH_TRACING }}
+      LANGSMITH_ENDPOINT                         : ${{ secrets.LANGSMITH_ENDPOINT }}
+      LANGSMITH_API_KEY                          : ${{ secrets.LANGSMITH_API_KEY }}
+      LANGSMITH_PROJECT                          : ${{ secrets.LANGSMITH_PROJECT }}
+      LANGCHAIN_CALLBACKS_BACKGROUND             : ${{ secrets.LANGCHAIN_CALLBACKS_BACKGROUND }}
       # OpenAI credentials.
       OPENAI_GPT_API_KEY                         : ${{ secrets.OPENAI_GPT_API_KEY }}
       OPENAI_GPT_LITE_MODEL_ID                   : ${{ secrets.OPENAI_GPT_LITE_MODEL_ID }}
