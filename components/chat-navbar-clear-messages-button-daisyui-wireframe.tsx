@@ -7,6 +7,7 @@ import type { ClearMessagesButtonWireframeProps } from '@/types/chat-navbar-prop
 export const ClearMessagesButtonWireframe = ({
   isLoading,
   isMessagesEmpty,
+  inputRef,
   clearMessages,
 }: ClearMessagesButtonWireframeProps): JSX.Element => {
   const dialogId: string = 'clear-messages-dialog';
@@ -29,6 +30,9 @@ export const ClearMessagesButtonWireframe = ({
   const handleClearMessages = (): void => {
     clearMessages();
     closeModal();
+
+    // Refocus on input textarea after clearing messages for better UX.
+    inputRef.current?.focus();
   };
 
   const getTooltipContent = (): string => {
@@ -66,12 +70,12 @@ export const ClearMessagesButtonWireframe = ({
       <SimpleTooltip id={tooltipId} />
       <dialog id={dialogId} className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Clear messages</h3>
+          <h3 className="font-bold text-lg">Clear Messages</h3>
           <p>
             Are you sure you want to clear all messages? This cannot be undone.
           </p>
           <div className="modal-action">
-            <form method="dialog">
+            <form method="dialog" className="flex justify-end gap-2">
               <button type="button" className="btn" onClick={closeModal}>
                 Cancel
               </button>

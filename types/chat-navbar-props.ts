@@ -13,6 +13,7 @@ export interface ChatNavbarWireframeProps {
 export interface ClearMessagesButtonWireframeProps {
   isLoading      : boolean;
   isMessagesEmpty: boolean;
+  inputRef       : RefObject<HTMLTextAreaElement>;
   clearMessages  : () => void;
 }
 
