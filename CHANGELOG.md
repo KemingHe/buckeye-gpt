@@ -1,5 +1,15 @@
 # buckeye-gpt
 
+## 0.16.1
+
+### Patch Changes
+
+- [#135](https://github.com/KemingHe/buckeye-gpt/pull/135) [`8533e32`](https://github.com/KemingHe/buckeye-gpt/commit/8533e32a10bb330f5b575f4c702266409da6ac8a) Thanks [@KemingHe](https://github.com/KemingHe)! - Updated dependencies.
+
+- [#135](https://github.com/KemingHe/buckeye-gpt/pull/135) [`8533e32`](https://github.com/KemingHe/buckeye-gpt/commit/8533e32a10bb330f5b575f4c702266409da6ac8a) Thanks [@KemingHe](https://github.com/KemingHe)! - Refactored sign-in server action into auth send magic link endpoint (POST) for best practice.
+
+- [#135](https://github.com/KemingHe/buckeye-gpt/pull/135) [`8533e32`](https://github.com/KemingHe/buckeye-gpt/commit/8533e32a10bb330f5b575f4c702266409da6ac8a) Thanks [@KemingHe](https://github.com/KemingHe)! - Restricted workflow run to 'KemingHe/buckeye-gpt' repo only to avoid fork action errors.
+
 ## 0.16.0
 
 ### Minor Changes
