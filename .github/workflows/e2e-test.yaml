@@ -9,6 +9,7 @@ on:
 
 jobs:
   e2e-test:
+    if: github.repository == 'KemingHe/buckeye-gpt'
     runs-on: ubuntu-latest
     permissions:
       contents: read

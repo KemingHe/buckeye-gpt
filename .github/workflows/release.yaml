@@ -9,6 +9,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
+    if: github.repository == 'KemingHe/buckeye-gpt'
     runs-on: ubuntu-latest
     permissions:
       contents: write

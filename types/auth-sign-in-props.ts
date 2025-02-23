@@ -3,10 +3,6 @@ import type { FieldErrors, UseFormRegister } from 'react-hook-form';
 
 import type { SignInFormFields } from '@/zod-schemas/sign-in-form-fields';
 
-export interface SignInProps {
-  signInServerAction: (data: SignInFormFields) => Promise<void>;
-}
-
 export interface SignInWireframeProps extends SignInFormProps {
   isEmailSent: boolean;
 }

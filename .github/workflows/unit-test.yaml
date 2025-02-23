@@ -9,6 +9,7 @@ on:
 
 jobs:
   unit-test:
+    if: github.repository == 'KemingHe/buckeye-gpt'
     runs-on: ubuntu-latest
     permissions:
       contents: read

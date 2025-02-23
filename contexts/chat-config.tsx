@@ -15,11 +15,11 @@ import {
 import {
   LANGCHAIN_GOOGLE_GEMINI_LITE_API_ENDPOINT,
   LANGCHAIN_GOOGLE_GEMINI_REGULAR_API_ENDPOINT,
-  LANGCHAIN_OPENAI_LITE_API_ENDPOINT,
-  LANGCHAIN_OPENAI_REGULAR_API_ENDPOINT,
+  LANGCHAIN_OPENAI_GPT_LITE_API_ENDPOINT,
+  LANGCHAIN_OPENAI_GPT_REGULAR_API_ENDPOINT,
   // LANGCHAIN_ANTHROPIC_CLAUDE_LITE_API_ENDPOINT,
   // LANGCHAIN_ANTHROPIC_CLAUDE_REGULAR_API_ENDPOINT,
-} from '@/constants/api-endpoints';
+} from '@/constants/api-v1-endpoints';
 import type {
   ChatConfigContextValue,
   ChatContextProviderProps,
@@ -33,7 +33,7 @@ export const ChatConfigProvider = ({
 }: ChatContextProviderProps): JSX.Element => {
   const clientUser: CurrentUser | CurrentInternalUser | null = useUser();
   const [apiEndpoint, setApiEndpoint] = useState<string>(
-    LANGCHAIN_OPENAI_LITE_API_ENDPOINT,
+    LANGCHAIN_OPENAI_GPT_LITE_API_ENDPOINT,
   );
   const [fallbackApiEndpoint, setFallbackApiEndpoint] = useState<string>(
     LANGCHAIN_GOOGLE_GEMINI_LITE_API_ENDPOINT,
@@ -41,10 +41,10 @@ export const ChatConfigProvider = ({
 
   useEffect(() => {
     if (clientUser !== null) {
-      setApiEndpoint(LANGCHAIN_OPENAI_REGULAR_API_ENDPOINT);
+      setApiEndpoint(LANGCHAIN_OPENAI_GPT_REGULAR_API_ENDPOINT);
       setFallbackApiEndpoint(LANGCHAIN_GOOGLE_GEMINI_REGULAR_API_ENDPOINT);
     } else {
-      setApiEndpoint(LANGCHAIN_OPENAI_LITE_API_ENDPOINT);
+      setApiEndpoint(LANGCHAIN_OPENAI_GPT_LITE_API_ENDPOINT);
       setFallbackApiEndpoint(LANGCHAIN_GOOGLE_GEMINI_LITE_API_ENDPOINT);
     }
   }, [clientUser]);
