@@ -7,4 +7,4 @@ export const SOCIALIFY_PREVIEW_IMAGE_URL: string =
 export const SOCIALIFY_PREVIEW_IMAGE_WIDTH: number = 1280;
 export const SOCIALIFY_PREVIEW_IMAGE_HEIGHT: number = 640;
 export const SOCIALIFY_PREVIEW_IMAGE_ALT: string =
-  'Buckeye GPT is a open-source multi-modal ChatGPT clone with RAG built free for students at the Ohio State University.';
+  'Buckeye GPT is an independent AI chatbot making advanced language models freely accessible to Ohio State students';
