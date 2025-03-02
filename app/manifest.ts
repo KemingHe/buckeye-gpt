@@ -7,7 +7,7 @@ const manifest = (): MetadataRoute.Manifest => {
     name: 'Buckeye GPT',
     short_name: 'BuckeyeGPT',
     description:
-      'Multi-modal ChatGPT clone with RAG built free for students at the Ohio State University.',
+      'Buckeye GPT is an independent AI chatbot making advanced language models freely accessible to Ohio State students',
     start_url: '/',
     icons: [
       {

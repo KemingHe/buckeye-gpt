@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Buckeye GPT',
     description:
-      'Multi-modal ChatGPT clone with RAG built free for students at the Ohio State University.',
+      'Buckeye GPT is an independent AI chatbot making advanced language models freely accessible to Ohio State students',
     site: '@Keming_He',
     creator: '@Keming_He',
     images: [
