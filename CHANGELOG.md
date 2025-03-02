@@ -1,5 +1,13 @@
 # buckeye-gpt
 
+## 0.16.2
+
+### Patch Changes
+
+- [#137](https://github.com/KemingHe/buckeye-gpt/pull/137) [`9e0430a`](https://github.com/KemingHe/buckeye-gpt/commit/9e0430adf05630becbc3e3581e76b5f27ba9f8c0) Thanks [@KemingHe](https://github.com/KemingHe)! - Updated dependencies
+
+- [#137](https://github.com/KemingHe/buckeye-gpt/pull/137) [`9e0430a`](https://github.com/KemingHe/buckeye-gpt/commit/9e0430adf05630becbc3e3581e76b5f27ba9f8c0) Thanks [@KemingHe](https://github.com/KemingHe)! - Polished readme to include motivation section for project. Updated description to be more concise.
+
 ## 0.16.1
 
 ### Patch Changes
