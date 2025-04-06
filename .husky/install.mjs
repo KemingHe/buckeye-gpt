@@ -1,7 +1,7 @@
 // Skip husky installation in prod env and CI.
 // https://typicode.github.io/husky/how-to.html#ci-server-and-docker
 if (process.env.NODE_ENV === 'production') {
-  console.log('Prodoction env detected, Husky installation skipped.');
+  console.log('Production env detected, Husky installation skipped.');
   process.exit(0);
 }
 
