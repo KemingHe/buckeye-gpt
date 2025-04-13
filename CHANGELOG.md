@@ -1,5 +1,11 @@
 # buckeye-gpt
 
+## 0.16.4
+
+### Patch Changes
+
+- [#143](https://github.com/KemingHe/buckeye-gpt/pull/143) [`023457f`](https://github.com/KemingHe/buckeye-gpt/commit/023457f1d9d4cbe7a23546775ba8d150692cab89) Thanks [@KemingHe](https://github.com/KemingHe)! - Updated pnpm and deps to next minor or patch versions.
+
 ## 0.16.3
 
 ### Patch Changes
