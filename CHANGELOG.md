@@ -1,5 +1,17 @@
 # buckeye-gpt
 
+## 0.17.0
+
+### Minor Changes
+
+- [#147](https://github.com/KemingHe/buckeye-gpt/pull/147) [`b7ea0e7`](https://github.com/KemingHe/buckeye-gpt/commit/b7ea0e71e2388fc4fc90dc2297afb1da9530cf59) Thanks [@KemingHe](https://github.com/KemingHe)! - Added Google Search-grounded Gemini 2.0 endpoint. Removed LangChain for simplicity.
+
+### Patch Changes
+
+- [#147](https://github.com/KemingHe/buckeye-gpt/pull/147) [`db73440`](https://github.com/KemingHe/buckeye-gpt/commit/db7344021cd61d5c223e2eedbcba62e141be8707) Thanks [@KemingHe](https://github.com/KemingHe)! - Removed LangChain as unused. Removed Anthropic keys from local as unused. Cleaned up deps.
+
+- [#147](https://github.com/KemingHe/buckeye-gpt/pull/147) [`db73440`](https://github.com/KemingHe/buckeye-gpt/commit/db7344021cd61d5c223e2eedbcba62e141be8707) Thanks [@KemingHe](https://github.com/KemingHe)! - Updated GitHub Actions secrets to match latest .env and .env.example after removal of unused deps and keys.
+
 ## 0.16.5
 
 ### Patch Changes
