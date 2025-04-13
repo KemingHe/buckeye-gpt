@@ -57,7 +57,7 @@ export const ChatInputWireframe = ({
             onKeyDown={handleKeyDown}
             disabled={isLoading}
             placeholder={
-              isLoading ? 'Loading...' : 'I have a question about...'
+              isLoading ? 'Loading...' : 'I can help you Google search...'
             }
             value={textAreaValue}
             required

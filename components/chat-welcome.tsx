@@ -1,6 +1,6 @@
 import {
-  DocumentTextIcon,
   QuestionMarkCircleIcon,
+  SparklesIcon,
 } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import type { JSX } from 'react';
@@ -56,13 +56,15 @@ export const ChatWelcome = (): JSX.Element => {
           <button
             type="button"
             className="btn btn-neutral btn-outline btn-sm rounded-full"
-            onClick={() => handleSuggestionClick('How to cite in APA style?')}
+            onClick={() =>
+              handleSuggestionClick("What's new at Google Cloud Next?")
+            }
             disabled={isLoading}
-            aria-label="Ask about APA citation format"
+            aria-label="Ask about what's new at Google Cloud Next?"
             aria-disabled={isLoading}
           >
-            <DocumentTextIcon className="size-5 -me-1" aria-hidden="true" />
-            <span aria-hidden="true">How to cite in APA style</span>
+            <SparklesIcon className="size-5 -me-1" aria-hidden="true" />
+            <span aria-hidden="true">What's new at Google Cloud Next?</span>
           </button>
         </li>
       </ul>

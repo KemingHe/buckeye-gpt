@@ -1,4 +1,4 @@
-import { type UseChatHelpers, useChat } from 'ai/react';
+import { type UseChatHelpers, useChat } from '@ai-sdk/react';
 import {
   type Context,
   type JSX,
@@ -27,7 +27,7 @@ export const ChatDataProvider = ({
   const inputRef: RefObject<HTMLTextAreaElement> =
     useRef<HTMLTextAreaElement>(null);
   const {
-    isLoading,
+    status,
     error,
     messages,
     input,
@@ -43,8 +43,8 @@ export const ChatDataProvider = ({
 
   // Auto re-focus on input textarea when loading is done.
   useEffect(() => {
-    if (!isLoading) inputRef.current?.focus();
-  }, [isLoading]);
+    if (status === 'ready') inputRef.current?.focus();
+  }, [status]);
 
   // Auto-refocus on input textarea when messages have been cleared.
   const clearMessages = useCallback(() => {
@@ -56,7 +56,7 @@ export const ChatDataProvider = ({
   // 2. Creating a simple object with references is cheap;
   // 3. When chat state changes, consumers would re-render anyway.
   const contextValue: ChatDataContextValue = {
-    isLoading,
+    isLoading: status === 'submitted' || status === 'streaming',
     error,
     messages,
     inputValue: input,
