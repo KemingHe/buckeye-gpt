@@ -3,7 +3,7 @@
   "type": "module",
   "name": "buckeye-gpt",
   "description": "Buckeye GPT is an independent AI chatbot making advanced language models freely accessible to Ohio State students",
-  "version": "0.16.4",
+  "version": "0.16.5",
   "keywords": [
     "nextjs",
     "stack-auth",

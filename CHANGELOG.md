@@ -1,5 +1,11 @@
 # buckeye-gpt
 
+## 0.16.5
+
+### Patch Changes
+
+- [#145](https://github.com/KemingHe/buckeye-gpt/pull/145) [`9126602`](https://github.com/KemingHe/buckeye-gpt/commit/9126602dc4beaf3169326e79d9072c2137bc96fe) Thanks [@KemingHe](https://github.com/KemingHe)! - Increased streaming window to 60s to prevent response cut-off.
+
 ## 0.16.4
 
 ### Patch Changes
