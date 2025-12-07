@@ -1,11 +1,16 @@
 name: Playwright
 
 on:
-  push:
-  pull_request:
+  # Disabled on push and PR as local (macOS) and runner (Linux) env mismatch will cause snapshots to fail
+  # push:
+  # pull_request:
+
+  # Keep only manual trigger for future testing
   workflow_dispatch:
-  schedule:
-    - cron: '0 7 * * 0'
+
+  # Disabled cron job to 1. conserve action runner usage and 2. as unimportant
+  # schedule:
+  #   - cron: '0 7 * * 0'
 
 jobs:
   e2e-test:
