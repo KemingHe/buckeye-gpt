@@ -8,7 +8,7 @@ on:
   # Keep only manual trigger for future testing
   workflow_dispatch:
 
-  # Disabled cron job to 1. conserve action runner usage and 2. as un-important
+  # Disabled cron job to 1. conserve action runner usage and 2. as unimportant
   # schedule:
   #   - cron: '0 7 * * 0'
 
