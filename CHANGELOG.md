@@ -1,5 +1,11 @@
 # buckeye-gpt
 
+## 0.17.1
+
+### Patch Changes
+
+- [#152](https://github.com/KemingHe/buckeye-gpt/pull/152) [`f364ccb`](https://github.com/KemingHe/buckeye-gpt/commit/f364ccb43104d8e23bcc50e663faa9d0f93f74ce) Thanks [@KemingHe](https://github.com/KemingHe)! - update deps to patch critical next.js exploit
+
 ## 0.17.0
 
 ### Minor Changes
