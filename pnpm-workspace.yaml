@@ -1,4 +1,6 @@
 onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - bcrypt
   - esbuild
   - openai-zod-to-json-schema
   - sharp
