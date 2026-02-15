@@ -1,9 +1,16 @@
-# Buckeye GPT
+# ⚠️ [Archived] ⚠️ Buckeye GPT
 
 ![Buckeye GPT is an independent AI chatbot making advanced language models freely accessible to Ohio State students](https://socialify.git.ci/KemingHe/buckeye-gpt/png?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FKemingHe%2Fbuckeye-gpt%2Fblob%2Fmain%2Fpublic%2Fimages%2Ftransparent-buckeye-gpt-icon-512x512px.png%3Fraw%3Dtrue&name=1&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Light)
 
 [![GitHub License](https://img.shields.io/github/license/KemingHe/buckeye-gpt?label=License)](https://github.com/KemingHe/buckeye-gpt/blob/main/LICENSE)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fbuckeye.chat&up_message=online&down_message=down&label=Buckeye%20GPT)](https://buckeye.chat)
+
+> [!WARNING]
+>
+> **This repository is archived and no longer maintained.**
+>
+> - **Archived**: 2026-02-15 by [@KemingHe](https://github.com/KemingHe)
+> - **Archive Reason**: More mature and actively maintained alternatives, i.e. [OpenWebUI](https://docs.openwebui.com/) available
+> - **Inquries and Corrections**: Email keminghe[dot]career[at]gmail[dot]com
 
 ## Overview
 
@@ -20,7 +27,8 @@ Built with the community in mind, the platform offers:
 
 ## Development Quick Start
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
+>
 > Buckeye GPT is currently in pre-1.0 development. While the platform is stable for end users, the codebase is undergoing significant architectural changes. Public contributions will be welcomed after v1.0.0 release.
 >
 > **Current Status:**
@@ -38,19 +46,18 @@ Built with the community in mind, the platform offers:
 
 1. Fork Buckeye GPT and clone it to your local environment:
 
-```shell
-git clone https://github.com/your-gh-username/your-fork-of-buckeye-gpt.git
-cd your-fork-of-buckeye-gpt
-```
+  ```shell
+  git clone https://github.com/your-gh-username/your-fork-of-buckeye-gpt.git
+  cd your-fork-of-buckeye-gpt
+  ```
 
 2. Install dependencies
 
-```shell
-pnpm install
-```
+  ```shell
+  pnpm install
+  ```
 
 3. Coming soon...
-
 
 ## Changelog Management
 
